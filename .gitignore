@@ -1,0 +1,6 @@
+*node*err
+*node*done
+*node*log
+*/.snakemake/*
+*/__pycache__
+*/data/*
