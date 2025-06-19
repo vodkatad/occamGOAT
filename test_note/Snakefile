@@ -1,0 +1,6 @@
+rule test_note: 
+   output: "meh"
+   log:
+        notebook="logs/prova.ipynb"
+   notebook:
+        "prova.ipynb"
