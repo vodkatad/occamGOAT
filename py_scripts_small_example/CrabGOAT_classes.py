@@ -39,6 +39,7 @@ import re
 from torch.nn import Linear, Dropout, ReLU, Sequential
 from torch_geometric.nn import SAGEConv, global_mean_pool,SAGPooling
 from torch_geometric.data import DataLoader
+import collections
 
 #si generano i grafi partendo da quello generale e tenendo solo gli edge
 #corrispondenti ai geni espressi nelle count matrix del sample
@@ -116,7 +117,7 @@ def generate_graph(path_expr_csv, edge_index, gene_to_idx, soglia=0.1):
     return grafi
 
 class My_Graph_data(Dataset):
-    def __init__(self, root, edge_index, gene_to_idx, transform=None, pre_transform=None): #gli edge_inde e gene_index sono quelli del mapping e poi saranno filtrati per i geni presenti in quella cellula in generate_graph
+    def __init__(self, root, edge_index, gene_to_idx, wt, kras, transform=None, pre_transform=None): #gli edge_inde e gene_index sono quelli del mapping e poi saranno filtrati per i geni presenti in quella cellula in generate_graph
         self.edge_index = edge_index
         self.gene_to_idx = gene_to_idx
         self.drive_folder = root
@@ -132,7 +133,7 @@ class My_Graph_data(Dataset):
         else:
             print("Creo e salvo i grafi")
             self.graphs = []
-            self._process_graphs()
+            self._process_graphs(wt, kras)
             torch.save(self.graphs, self.graphs_path)
 
 

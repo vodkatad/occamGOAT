@@ -51,7 +51,7 @@ if __name__ == '__main__':
     samples_test  = ss.loc[ss['test']=="yes"]['sample'].values
     # TODO minimal consistency checking of sample sheet
     
-    dataset = CrabGOAT_classes.My_Graph_data(root=dir, edge_index=edge_index, gene_to_idx=gene_to_idx)
+    dataset = CrabGOAT_classes.My_Graph_data(root=dir, edge_index=edge_index, gene_to_idx=gene_to_idx, wt=wt, kras=kras)
 
 
     records = []
