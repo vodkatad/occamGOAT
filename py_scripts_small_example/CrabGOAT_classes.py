@@ -263,6 +263,7 @@ class GraphSAGEResNetGraph(torch.nn.Module):
 def train(model, loader, optimizer, criterion, device):
     model.train()
     total_loss, correct, total = 0, 0, 0
+    torch.cuda.empty_cache()
     for data in loader:
         data = data.to(device)
         optimizer.zero_grad()

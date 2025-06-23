@@ -34,15 +34,23 @@ if __name__ == '__main__':
     dir = args.dir
 
     path_gg=args.edges
+
     general_graph=pd.read_csv(path_gg)
-    geni_unici = pd.unique(general_graph[['source', 'target']].values.ravel())
-    # TODO add backwards edges to have an undirected graph
+    # adding backwards edges to have an undirected graph (super meh way)
+    ed_ts = general_graph.apply(tuple, axis=1)
+    ed_st = [x[::-1] for x in ed_ts]
+    #print(len(ed_st))
+    ed_all = ed_st + [x for x in ed_ts]
+    #print(ed_all) # wtf...
+    und_general_graph = pd.DataFrame(data={'source': [x[0] for x in ed_all],
+                                      'target': [x[1] for x in ed_all]})
+    geni_unici = pd.unique(und_general_graph[['source', 'target']].values.ravel())
     gene_to_idx = {gene: idx for idx, gene in enumerate(sorted(geni_unici))}
     idx_to_gene = {idx: gene for gene, idx in gene_to_idx.items()}
     edge_index = np.array([
-                [gene_to_idx[src] for src in general_graph['source']],
-                [gene_to_idx[tgt] for tgt in general_graph['target']]
-                ])
+        [gene_to_idx[src] for src in und_general_graph['source']],
+        [gene_to_idx[tgt] for tgt in und_general_graph['target']]
+    ])
 
     wt = ss.loc[ss['genotype']=='wt']['file'].values
     kras =  ss.loc[ss['genotype']=='kras']['file'].values
@@ -110,21 +118,21 @@ if __name__ == '__main__':
     val_split   = [g for g in train_graphs if g.tumor_id in val_ids]
 
 
-    train_loader = DataLoader(train_split, batch_size=128, shuffle=True)
-    val_loader   = DataLoader(val_split, batch_size=128) # TODO PARAM
-    test_loader  = DataLoader(test_graphs, batch_size=128)
+    train_loader = DataLoader(train_split, batch_size=64, shuffle=True)
+    val_loader   = DataLoader(val_split, batch_size=64) # TODO PARAM
+    test_loader  = DataLoader(test_graphs, batch_size=64)
     #  UserWarning: 'data.DataLoader' is deprecated, use 'loader.DataLoader'
 
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model = CrabGOAT_classes.GraphSAGEResNetGraph(in_channels=dataset.num_node_features,
-                             hidden_channels=128,
+                             hidden_channels=64,
                              dropout=0.1,
                              pool_ratio=0.9).to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=0.001, weight_decay=5e-4)
     criterion = torch.nn.BCEWithLogitsLoss()
 
-    num_epochs = 2 # 500 ## TODO PARAM
+    num_epochs = 500 #  500 ## TODO PARAM
     train_losses, train_accs = [], []
     val_losses, val_accs = [], []
 
