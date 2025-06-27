@@ -1,0 +1,25 @@
+models=['GAT', 'transformer']
+
+parameters_transformer = {
+    'batch_sizes': [16,32,64],
+    'learning_rates': [0.00001, 0.00005, 0.0001],
+    'hidden_layers': [32,64,128]
+}
+
+parameters_GAT = {
+    'batch_sizes': [16,32,64],
+    'learning_rates': [0.00001, 0.00005, 0.0001],
+    'hidden_layers': [32,64,128]
+}
+rule all:
+    input: expand("data/{model}_b{batch}-l{lr}-h{hl}.done", model='transformer', batch=parameters_transformer['batch_sizes'], lr=parameters_transformer['learning_rates'], hl=parameters_transformer['hidden_layers']), expand("data/{model}_b{batch}-l{lr}-h{hl}.done", model='GAT', batch=parameters_GAT['batch_sizes'], lr=parameters_GAT['learning_rates'], hl=parameters_GAT['hidden_layers'])
+
+rule call_model:
+    log: log="data/{model}_b{batch}-l{lr}-h{hl}.log"
+    output: "data/{model}_b{batch}-l{lr}-h{hl}.done"
+    benchmark: "bench/{model}_b{batch}-l{lr}-h{hl}.times"
+    shell:
+        """
+             python ../py_scripts/main.py  -d data/  -s samplesheet.csv  -p filtered_annotated -e data/edge_list_with_gene_names.csv -m {wildcards.model} -b {wildcards.batch} -l {wildcards.lr} -i {wildcards.hl} > {log.log}
+            touch {output}
+        """
