@@ -15,6 +15,19 @@ from torch_geometric.data import DataLoader
 import gc
 import time
 
+from torch_geometric.nn import GraphConv, TopKPooling, GatedGraphConv
+from torch_geometric.nn import global_mean_pool as gap, global_max_pool as gmp
+import torch.nn.functional as F
+import re
+import torch
+from torch.nn import Linear, Dropout, ReLU, Sequential
+from torch_geometric.nn import SAGEConv, global_mean_pool,SAGPooling,BatchNorm
+from torch_geometric.loader import DataLoader
+from torch.optim import AdamW
+from torch.optim.lr_scheduler import LambdaLR,OneCycleLR
+
+
+import math
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
                     prog='Caprettina',
@@ -112,7 +125,7 @@ if __name__ == '__main__':
     patience_limit = 50
     batch_size=par_batch_size
     hidden_channels=par_hidden_channels
-    warmup_epochs=10
+    warmup_epochs=1 # 10 or 20? CHANGEME
     base_lr=par_learn_rate   #base_lr=[0,001,0.0005,0.00001]
     
     from torch_geometric.loader import DataLoader
@@ -173,7 +186,9 @@ if __name__ == '__main__':
         return LambdaLR(optimizer, lr_lambda)
 
     optimizer = AdamW(model.parameters(), lr=base_lr, weight_decay=1e-4)
-    scheduler = make_scheduler(optimizer, total_epochs=num_epochs, warmup_epochs=20)
+    scheduler = make_scheduler(optimizer, total_epochs=num_epochs, warmup_epochs=warmup_epochs)
+    num_neg = Counter(int(g.y.item()) for g in train_graphs)[0]
+    num_pos = Counter(int(g.y.item()) for g in train_graphs)[1]
     pos_weight = torch.tensor([num_neg / num_pos], dtype=torch.float, device=device)
     criterion = torch.nn.BCEWithLogitsLoss(pos_weight=pos_weight)
 
@@ -199,7 +214,7 @@ if __name__ == '__main__':
         # Early stopping + checkpoint
         if v_loss < best_val_loss:
             best_val_loss = v_loss
-            torch.save(model.state_dict(), 'best_model.pt')
+            torch.save(model.state_dict(), os.path.join(dir, my_params_name+'best_model.pt'))
             patience_counter = 0
         else:
             patience_counter += 1
@@ -214,9 +229,9 @@ if __name__ == '__main__':
         if patience_counter >= patience_limit:
             print(f"Early stopping at epoch {epoch} (no improvement for {patience_limit} epochs)", flush=True)
             break
-
+    
     # Alla fine, carica i pesi del miglior modello
-    model.load_state_dict(torch.load('best_model.pt'))
+    model.load_state_dict(torch.load(os.path.join(dir, my_params_name+'best_model.pt')))
 
     def test(model, loader, criterion, device):
         """Evaluate the model on the test set, returning loss, accuracy and confusion per tumor_id."""
@@ -326,4 +341,4 @@ if __name__ == '__main__':
 
     plot_metrics(train_losses,val_losses,train_accs,val_accs)
     res = pd.DataFrame(data={'train_loss': train_losses, 'val_loss': val_losses, 'train_accs': train_accs, 'val_accs': val_accs})
-    res.to_csv(os.path.join(dir, my_params_name+'-loss.png'))
+    res.to_csv(os.path.join(dir, my_params_name+'-loss_accs.csv'))
