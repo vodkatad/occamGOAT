@@ -1,0 +1,1 @@
+python /archive/home/egrassi/cuda/py_scripts_small_example/main.py -d /archive/home/egrassi/cuda/small_GNN_filtered_saver/data/ -s /archive/home/egrassi/cuda/py_scripts_small_example/samplesheet.csv -p /archive/home/egrassi/cuda/filtered_annotated -e /archive/home/egrassi/cuda/small_GNN_filtered_saver/data/edge_list_with_gene_names.csv

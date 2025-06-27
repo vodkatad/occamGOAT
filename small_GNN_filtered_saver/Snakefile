@@ -1,0 +1,8 @@
+rule test:
+    output: "data/edges.png"
+    benchmark: "data/edges.bench.txt"
+    log: log="data/edges.slog"
+    shell: 
+        """
+             python ../py_scripts_small_example/main.py  -d data/  -s samplesheet.csv  -p filtered_annotated -e data/general_edge_list.csv &> {log.log}
+        """

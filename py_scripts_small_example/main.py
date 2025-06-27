@@ -125,11 +125,12 @@ if __name__ == '__main__':
 
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    torch.cuda.empty_cache()
     model = CrabGOAT_classes.GraphSAGEResNetGraph(in_channels=dataset.num_node_features,
-                             hidden_channels=64,
-                             dropout=0.1,
+                             hidden_channels=128,
+                             dropout=0.2,
                              pool_ratio=0.9).to(device)
-    optimizer = torch.optim.Adam(model.parameters(), lr=0.001, weight_decay=5e-4)
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.001, weight_decay=1e-4)
     criterion = torch.nn.BCEWithLogitsLoss()
 
     num_epochs = 500 #  500 ## TODO PARAM
@@ -151,7 +152,7 @@ if __name__ == '__main__':
         # Print progress
         print(f"Epoch {epoch:03d} | "
               f"Train Loss: {tr_loss:.4f}, Train Acc: {tr_acc:.4f} | "
-              f"Val Loss: {v_loss:.4f}, Val Acc: {v_acc:.4f}")
+              f"Val Loss: {v_loss:.4f}, Val Acc: {v_acc:.4f}", flush=True)
 
     torch.save(model, os.path.join(dir, 'model.pt'))
     torch.save(model.state_dict(), os.path.join(dir, 'model_weights.pt')) # optim?

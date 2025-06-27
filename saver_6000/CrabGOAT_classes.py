@@ -41,45 +41,49 @@ from torch_geometric.nn import SAGEConv, global_mean_pool,SAGPooling
 from torch_geometric.data import DataLoader
 import collections
 
-#si generano i grafi partendo da quello generale e tenendo solo gli edge
-#corrispondenti ai geni espressi nelle count matrix del sample
-def generate_graph(path_expr_csv, edge_index, gene_to_idx, soglia=0.1):
+import torch
+import torch.nn.functional as F
+from torch_geometric.nn import (
+    GINConv,
+    SAGPooling,
+    global_mean_pool as gap,
+    global_max_pool as gmp,TransformerConv
+)
+from torch_geometric.utils import dropout_adj
+
+import torch
+import torch.nn.functional as F
+from torch_geometric.nn import GATConv, global_mean_pool as gap
+from torch_geometric.nn import GATv2Conv, TransformerConv
+
+
+def generate_graph(
+    path_expr_csv: str,
+    edge_index_global: np.ndarray,  # shape (2, M), indici globali 0..(num_genes-1)
+    gene_to_idx: dict,
+    soglia: float = 1
+) -> list[Data]:
     """
-    path_expr_csv: path al file CSV (rows = cellule, cols = geni)
-    edge_index: numpy array shape (2, N), già mappato con indici numerici==>dizionario(non nomi di geni)
-    gene_to_idx: dict nome gene -> indice numerico
-    soglia: valore minimo per considerare un gene espresso
+    Per ciascuna cella nel CSV, genera un grafo PyG con:
+      - tutti i num_total_genes nodi (feature=0 se < soglia)
+      - edge_index filtrato: rimuove archi che coinvolgono nodi sotto‐soglia
+      - g.cell_idx = l'indice riga (cell_id) del CSV
     """
+
+    # 1) Leggi il CSV (righe = cellule, colonne = geni; l'indice della riga è cell_id)
     expr_df = pd.read_csv(path_expr_csv, index_col=0)
-    grafi = []
+
     num_total_genes = len(gene_to_idx)
-
-    # VODKA MAPPING
-    gene_names = [x[1] for x in expr_df.index.str.split(':')]
-    d = collections.defaultdict(int)
-    for x in gene_names:
-        d[x] += 1
-        gene_names_nodup = [x for x in gene_names if d[x] == 1]
-
-    mask = expr_df.index.to_series().apply(lambda x: any(sub == x.split(':')[1] for sub in gene_names_nodup))
-    expr_df = expr_df[mask]
-    expr_df.index =  [x[1] for x in expr_df.index.str.split(':')]
-    print(expr_df.shape)
-    expr_df = expr_df[expr_df.index.isin(gene_to_idx.keys())]
-    print(expr_df.shape)
-    expr_df.sort_index()
-
-    expr_df = expr_df.T
-    
-    #  TODO convert to undirected graph adding all bi-directional edges
+    grafi = []
 
     # Pre‐converto edge_index_global in torch.LongTensor perché lo riutilizziamo interamente
-    full_edge_index = torch.tensor(edge_index, dtype=torch.long)
+    full_edge_index = torch.tensor(edge_index_global, dtype=torch.long)
 
     # shape (M, 2) con coppie (u,v)
-    edges_M2 = edge_index.T  # ora ogni riga è [u,v]
-    skipped_cells = 0
+    edges_M2 = edge_index_global.T  # ora ogni riga è [u,v]
+
     for cell_id, cell_expr in expr_df.iterrows():
+
         # 2) Creiamo features=(num_total_genes,1), tutte a zero
         features = torch.zeros((num_total_genes, 1), dtype=torch.float32)
 
@@ -100,11 +104,10 @@ def generate_graph(path_expr_csv, edge_index, gene_to_idx, soglia=0.1):
             mask = np.array([(u in valid_indices and v in valid_indices) for u, v in edges_M2],
                             dtype=bool)
             # applico la maschera a edge_index_global (2×M)
-            filtered_edges = edge_index[:, mask]
+            filtered_edges = edge_index_global[:, mask]
             edge_index_tensor = torch.tensor(filtered_edges, dtype=torch.long)
         else:
             # Se non ho geni sopra th salto la cella
-            skipped_cells = skipped_cells + 1
             continue
 
         # 6) Creo l’oggetto Data, incluso cell_idx
@@ -113,20 +116,19 @@ def generate_graph(path_expr_csv, edge_index, gene_to_idx, soglia=0.1):
         pyg_graph.cell_idx = cell_id   # salva l'indice riga del CSV
         grafi.append(pyg_graph)
 
-    print(f"{skipped_cells} for not expressed genes")
     return grafi
 
-class My_Graph_data(Dataset):
-    def __init__(self, root, edge_index, gene_to_idx, wt, kras, transform=None, pre_transform=None): #gli edge_inde e gene_index sono quelli del mapping e poi saranno filtrati per i geni presenti in quella cellula in generate_graph
+
+
+class Graph_data(Dataset):
+    def __init__(self, root, edge_index, gene_to_idx, wt, kras, transform=None, pre_transform=None):
         self.edge_index = edge_index
         self.gene_to_idx = gene_to_idx
         self.drive_folder = root
         super().__init__(root, transform, pre_transform)
 
-
         self.graphs_path = os.path.join(self.root, 'graphs.pt')
 
-        # controllo se ho già creato i grafi o voglio ricaricarli (se voglio ricaricarli devo eliminare la cartella che li contiene)
         if os.path.exists(self.graphs_path):
             print("Carico grafi già salvati")
             self.graphs = torch.load(self.graphs_path, weights_only=False)
@@ -135,7 +137,6 @@ class My_Graph_data(Dataset):
             self.graphs = []
             self._process_graphs(wt, kras)
             torch.save(self.graphs, self.graphs_path)
-
 
     @property
     def raw_file_names(self):
@@ -149,13 +150,21 @@ class My_Graph_data(Dataset):
         pass
 
     def _process_graphs(self, wt, kras, fileprefix='filtered_annotated'):
-        tumor_files = [f for f in os.listdir(self.drive_folder) if f.startswith(fileprefix)]
+        tumor_files = [f for f in os.listdir(self.drive_folder) if f.startswith(file_prefix)]
+
+        #wt = ['filtered_CRC0322_NT_1_3000.csv', 'filtered_CRC0327_NT_2.csv', 'filtered_CRC0542_NT72h_1.csv']
+        #kras = ['filtered_CRC1139_NT_1.csv', 'filtered_CRC1502_NT_1.csv', 'filtered_CRC1620_NT_1.csv']
 
         for file in tumor_files:
             print(f"Processing {file}")
             path_expr = os.path.join(self.drive_folder, file)
 
-            tumor_graphs = generate_graph(path_expr, self.edge_index, self.gene_to_idx, soglia=0.1)
+            graphs = generate_graph(
+                path_expr_csv = path_expr,
+                edge_index_global = self.edge_index,
+                gene_to_idx = self.gene_to_idx,
+                soglia = 0.1
+            )
 
             if file in kras:
                 label = 1
@@ -170,9 +179,9 @@ class My_Graph_data(Dataset):
             else:
                 raise ValueError(f"Impossibile estrarre CRC ID da file: {file}")
 
-            for g in tumor_graphs:
+            for g in graphs:
                 g.y = torch.tensor([label], dtype=torch.long)
-                g.tumor_id = tumor_id
+                g.tumor_id = tumor_id # tolto per le discrasie di prove?
                 self.graphs.append(g)
 
     def len(self):
@@ -181,89 +190,89 @@ class My_Graph_data(Dataset):
     def get(self, idx):
         return self.graphs[idx]
 
-# graph sage with skip connection
-class GraphSAGEResNetGraph(torch.nn.Module):
-    """
-    Graph-level binary classifier with GraphSAGE, residuals, and SAGPooling (TopK-based
-    pooling with learnable score via a GNN) after each conv layer.
-    Allows extracting graph embeddings from first MLP layer.
 
-    Parameters
-    ----------
-    in_channels : int
-        Dimensionality of input node features.
-    hidden_channels : int
-        Dimensionality of hidden layers.
-    dropout : float, optional
-        Dropout probability (default: 0.5).
-    pool_ratio : float, optional
-        Node retention ratio for each SAGPooling (default: 0.8).
-    """
-    def __init__(self, in_channels: int, hidden_channels: int,
-                 dropout: float = 0.5, pool_ratio: float = 0.8):
+class GatClassifier(torch.nn.Module):
+    def __init__(self, in_channels, hidden_channels, heads=3, num_layers=2, dropout=0.3):
         super().__init__()
-        # GraphSAGE layers
-        self.conv1 = GATConv(in_channels, hidden_channels)
-        self.pool1 = SAGPooling(hidden_channels, ratio=pool_ratio)
-        self.conv2 = GATConv(hidden_channels, hidden_channels)
-        self.pool2 = SAGPooling(hidden_channels, ratio=pool_ratio)
-        self.conv3 = GATConv(hidden_channels, hidden_channels)
-        self.pool3 = SAGPooling(hidden_channels, ratio=pool_ratio)
+        self.convs = torch.nn.ModuleList()
+        # primo layer: da in_channels → hidden
+        self.convs.append(GATConv(in_channels, hidden_channels, heads=heads, dropout=dropout))
+        # layer successivi: dim = hidden*heads → hidden
+        for _ in range(num_layers-1):
+            self.convs.append(GATConv(hidden_channels*heads, hidden_channels, heads=heads, dropout=dropout))
 
-        # Global pooling for final representation
-        self.global_pool = global_mean_pool
+        self.lin = torch.nn.Linear(hidden_channels*heads, 1)
+        self.act = torch.nn.ELU()
+        self.dropout = dropout
 
-        # MLP head split into two stages to extract embeddings
-        self.head1 = Linear(hidden_channels, hidden_channels)
-        self.head_act = ReLU()
-        self.head_drop = Dropout(dropout)
-        self.head2 = Linear(hidden_channels, 1)
+    def forward(self, x, edge_index, batch, return_attn=False):
+        attentions = []
+        for conv in self.convs:
+            x, (edge_index, attn) = conv(x, edge_index, return_attention_weights=True)
+            attentions.append(attn)   # shape: [num_edges, heads]
+            x = self.act(x)
+            x = F.dropout(x, p=self.dropout, training=self.training)
+        x = gap(x, batch)
+        logits = self.lin(x).squeeze(-1)
+        return (logits, attentions) if return_attn else logits
 
-        # Activation and dropout for conv layers
-        self.act = ReLU()
-        self.drop = Dropout(dropout)
 
-    def forward(self, x: torch.Tensor, edge_index: torch.Tensor,
-                batch: torch.Tensor, return_embedding: bool = False):
-        # Layer 1: conv + act + drop + pool
-        x1 = self.act(self.conv1(x, edge_index))
-        x1 = self.drop(x1)
-        x1, edge_index1, _, batch1, _, _ = self.pool1(x1, edge_index, None, batch)
+# GATv2Net con attn weights, matching GatClassifier API
+class GATv2Net(torch.nn.Module):
+    def __init__(self, in_channels, hidden_channels=64, heads=3, num_layers=2, dropout=0.3):
+        super().__init__()
+        self.convs = torch.nn.ModuleList()
+        # primo layer
+        self.convs.append(GATv2Conv(in_channels, hidden_channels, heads=heads, dropout=dropout))
+        # layer intermedi e finale
+        for _ in range(num_layers-1):
+            # mantiene hidden*heads → hidden
+            self.convs.append(GATv2Conv(hidden_channels*heads, hidden_channels, heads=heads, dropout=dropout))
+        self.lin = torch.nn.Linear(hidden_channels*heads, 1)
+        self.act = torch.nn.ELU()
+        self.dropout = dropout
 
-        # Layer 2: conv + residual + act + drop + pool
-        x2 = self.conv2(x1, edge_index1) + x1
-        x2 = self.act(x2)
-        x2 = self.drop(x2)
-        x2, edge_index2, _, batch2, _, _ = self.pool2(x2, edge_index1, None, batch1)
+    def forward(self, x, edge_index, batch, return_attn=False):
+        attentions = []
+        for conv in self.convs:
+            x, (edge_idx, attn) = conv(x, edge_index, return_attention_weights=True)
+            attentions.append(attn)
+            x = self.act(x)
+            x = F.dropout(x, p=self.dropout, training=self.training)
+        x = global_mean_pool(x, batch)
+        logits = self.lin(x).squeeze(-1)
+        return (logits, attentions) if return_attn else logits
 
-        # Layer 3: conv + residual + act + drop + pool
-        x3 = self.conv3(x2, edge_index2) + x2
-        x3 = self.act(x3)
-        x3 = self.drop(x3)
-        x3, edge_index3, _, batch3, _, _ = self.pool3(x3, edge_index2, None, batch2)
 
-        # Global pooling
-        pooled = self.global_pool(x3, batch3)
+# GraphTransformerNet con attn weights simile
+class GraphTransformerNet(torch.nn.Module):
+    def __init__(self, in_channels, hidden_channels=64, heads=3, num_layers=2, dropout=0.3, use_pos_enc=False):
+        super().__init__()
+        self.convs = torch.nn.ModuleList()
+        self.convs.append(TransformerConv(in_channels, hidden_channels, heads=heads, dropout=dropout, beta=True))
+        for _ in range(num_layers-1):
+            self.convs.append(TransformerConv(hidden_channels*heads, hidden_channels, heads=heads, dropout=dropout, beta=True))
+        self.lin = torch.nn.Linear(hidden_channels*heads, 1)
+        self.act = torch.nn.ELU()
+        self.dropout = dropout
+        self.use_pos_enc = use_pos_enc
 
-        # First MLP layer -> graph embeddings
-        embed = self.head1(pooled)
-        embed = self.head_act(embed)
-        embed = self.head_drop(embed)
+    def forward(self, x, edge_index, batch, return_attn=False, pos_enc=None):
+        attentions = []
+        if self.use_pos_enc and pos_enc is not None:
+            x = x + pos_enc
+        for conv in self.convs:
+            x, (edge_idx, attn) = conv(x, edge_index, return_attention_weights=True)
+            attentions.append(attn)
+            x = self.act(x)
+            x = F.dropout(x, p=self.dropout, training=self.training)
+        x = global_mean_pool(x, batch)
+        logits = self.lin(x).squeeze(-1)
+        return (logits, attentions) if return_attn else logits
 
-        # Final MLP -> logits
-        logits = self.head2(embed).view(-1)
-
-        #se c'è return_embedding: True ritorna anche embed sennò solo logits
-        if return_embedding:
-            return logits, embed
-        return logits
-
-# perchè fuori dal modello VODKA HERE HERE
-#@title TRAIN e TEST
 def train(model, loader, optimizer, criterion, device):
     model.train()
     total_loss, correct, total = 0, 0, 0
-    torch.cuda.empty_cache()
     for data in loader:
         data = data.to(device)
         optimizer.zero_grad()
