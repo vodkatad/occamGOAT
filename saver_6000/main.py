@@ -118,14 +118,13 @@ if __name__ == '__main__':
     gc.collect()
     torch.cuda.empty_cache()
 
-    #num_epochs = 500
-    num_epochs = 1 # CHANGEME!
+    num_epochs = 500
     best_val_loss = 10
     patience_counter = 0
     patience_limit = 50
     batch_size=par_batch_size
     hidden_channels=par_hidden_channels
-    warmup_epochs=1 # 10 or 20? CHANGEME
+    warmup_epochs=20
     base_lr=par_learn_rate   #base_lr=[0,001,0.0005,0.00001]
     
     from torch_geometric.loader import DataLoader
@@ -230,7 +229,9 @@ if __name__ == '__main__':
             print(f"Early stopping at epoch {epoch} (no improvement for {patience_limit} epochs)", flush=True)
             break
     
-    # Alla fine, carica i pesi del miglior modello
+    # Alla fine, carica i pesi del miglior modello (e ripulisce la GPU sperando di starci)
+    gc.collect()
+    torch.cuda.empty_cache()
     model.load_state_dict(torch.load(os.path.join(dir, my_params_name+'best_model.pt')))
 
     def test(model, loader, criterion, device):
