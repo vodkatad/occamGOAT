@@ -13,6 +13,13 @@ parameters_GAT = {
     'hidden_layers': [32,64,128]
 }
 
+parameters_sage = {
+    'learning_rates': [0.01,0.005,0.001,0.0005,0.00001],
+    'hidden_layers': [64, 128],
+    'dropout': [0.6,0.5,0.4],
+    'num_layers': [2,3,4]  # we have the two 
+}
+
 rule all:
     input: expand("data/{model}_b{batch}-l{lr}-h{hl}-d{dr}.done", model='transformer_2t_2l', batch=parameters_transformer['batch_sizes'], lr=parameters_transformer['learning_rates'], hl=parameters_transformer['hidden_layers'], dr=parameters_transformer['dropout']), expand("data/{model}_b{batch}-l{lr}-h{hl}-d{dr}.done", model='transformer_3t_2l', batch=parameters_transformer['batch_sizes'], lr=parameters_transformer['learning_rates'], hl=parameters_transformer['hidden_layers'], dr=parameters_transformer['dropout'])
 
@@ -23,6 +30,24 @@ rule call_model:
     shell: 
         """
             python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m {wildcards.model} -b {wildcards.batch} -l {wildcards.lr} -i {wildcards.hl} -d {wildcards.dr} > {log.log}
+            touch {output}
+        """
+        
+rule all_graphsage_128:
+    input: expand("data/{model}_b{batch}-l{lr}-h{hl}-d{dr}-n{nl}.done", model='GraphSage_128', batch=128, lr=parameters_sage['learning_rates'], hl=parameters_sage['hidden_layers'], dr=parameters_sage['dropout'], nl=parameters_sage['num_layers'])
+    
+rule all_graphsage_512:
+    input: expand("data/{model}_b{batch}-l{lr}-h{hl}-d{dr}-n{nl}.done", model='GraphSage_512', batch=512, lr=parameters_sage['learning_rates'], hl=parameters_sage['hidden_layers'], dr=parameters_sage['dropout'], nl=parameters_sage['num_layers'])
+    
+ruleorder: call_sage > call_model
+
+rule call_sage:
+    output: "data/{model}_b{batch}-l{lr}-h{hl}-d{dr}-n{nl}.done"
+    log: log="data/{model}_b{batch}-l{lr}-h{hl}-d{dr}-n{nl}.log"
+    benchmark: "bench/{model}_b{batch}-l{lr}-h{hl}-d{dr}-n{nl}.time"
+    shell: 
+        """
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m {wildcards.model} -b {wildcards.batch} -l {wildcards.lr} -i {wildcards.hl} -d {wildcards.dr} -n {wildcards.nl} > {log.log}
             touch {output}
         """
         

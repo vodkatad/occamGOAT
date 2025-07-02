@@ -1,6 +1,0 @@
-transformer_2t_2l_b32-l0.0001-h64-d0.5  "4585MiB /  16384MiB"   ok
-transformer_3t_2l_b64-l1e-05-h64-d0.5   "13445MiB /  16384MiB"  killed_during_test
-transformer_3t_2l_b32-l5e-06-h64-d0.5   "6883MiB /  16384MiB"   ok
-transformer_2t_2l_b32-l1e-05-h64-d04    lost
-transformer_2t_2l_b64-l5e-05-h64-d0.4  "9105MiB /  16384MiB"
-    

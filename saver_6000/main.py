@@ -42,23 +42,36 @@ if __name__ == '__main__':
     parser.add_argument('-l', '--learnrate')
     parser.add_argument('-i', '--hiddenlayer')
     parser.add_argument('-d', '--dropout')
+    parser.add_argument('-n', '--numlayers')
 
     args = parser.parse_args()
 
     if args.samplesheet is None or args.dir is None or args.prefix is None or args.edges is None or args.model is None or args.batchsize is None or args.learnrate is None or args.hiddenlayer is None or args.dropout is None:
         parser.print_help()
         sys.exit()
+    if args.model in ['GraphSage_128', 'GraphSage_512'] and args.numlayers is None:
+        parser.print_help()
+        print('Sage has also -n param!')
+        sys.exit()
+    else:
+        par_num_layers = int(args.numlayers)
+
     # TODO check existance and minimal error reporting
     ss = pd.read_csv(args.samplesheet)
     dir = args.dir
-    my_params_name = args.model + "_b" + args.batchsize + "-l" + args.learnrate + "-h" + args.hiddenlayer + "-d" + args.dropout
+    if args.model == 'GraphSage_128':
+        my_params_name = "GraphSage_b128-l" + args.learnrate + "-h" + args.hiddenlayer + "-d" + args.dropout + '-n' +  args.numlayers
+    elif args.model == 'GraphSage_512':
+        my_params_name = "GraphSage_b512-l" + args.learnrate + "-h" + args.hiddenlayer + "-d" + args.dropout + '-n' + args.numlayers
+    else:        
+        my_params_name = args.model + "_b" + args.batchsize + "-l" + args.learnrate + "-h" + args.hiddenlayer + "-d" + args.dropout
     print(my_params_name, flush=True)
     #
     par_batch_size = int(args.batchsize)
     par_learn_rate = float(args.learnrate)
     par_hidden_channels = int(args.hiddenlayer)
     par_dropout = float(args.dropout)
-
+    
     path_gg=args.edges
     general_graph=pd.read_csv(path_gg)
 
@@ -124,7 +137,7 @@ if __name__ == '__main__':
     patience_limit = 50
     batch_size=par_batch_size
     hidden_channels=par_hidden_channels
-    warmup_epochs=20
+    warmup_epochs=10 # was 20 for Transformers
     base_lr=par_learn_rate   #base_lr=[0,001,0.0005,0.00001]
     
     from torch_geometric.loader import DataLoader
@@ -146,8 +159,10 @@ if __name__ == '__main__':
 
     test_loader  = DataLoader(test_graphs, batch_size=batch_size)
 
-
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    if args.model == "GraphSage_128":
+        device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+    elif args.model == "GraphSage_512":
+        device = torch.device('cuda:1' if torch.cuda.is_available() else 'cpu')
     
     if args.model == 'GAT':
         model = CrabGOAT_classes.GATv2Net(
@@ -172,8 +187,14 @@ if __name__ == '__main__':
             heads=2,
             num_layers=2,
             dropout=par_dropout,
-            use_pos_enc=True).to(device)
-
+            use_pos_enc=False).to(device)
+    elif args.model == "GraphSage_128" or args.model == "GraphSage_512":
+        model = CrabGOAT_classes.GraphSAGESkipNet(
+            in_channels=dataset.num_node_features,
+            hidden_channels=hidden_channels,
+            num_layers=par_num_layers,
+            dropout=par_dropout,
+            use_pos_enc=False).to(device)
 
     def make_scheduler(optimizer, total_epochs=num_epochs, warmup_epochs=warmup_epochs):
         def lr_lambda(epoch):

@@ -58,7 +58,7 @@ from torch_geometric.nn import GraphConv, TopKPooling, GatedGraphConv
 from torch_geometric.nn import global_mean_pool as gap, global_max_pool as gmp
 import torch.nn.functional as F
 from torch.nn import Linear, Dropout, ReLU, Sequential
-from torch_geometric.nn import SAGEConv, global_mean_pool,SAGPooling,BatchNorm
+from torch_geometric.nn import SAGEConv, global_mean_pool,global_max_pool,SAGPooling,BatchNorm
 from torch_geometric.loader import DataLoader
 from torch.optim import AdamW
 from torch.optim.lr_scheduler import LambdaLR,OneCycleLR
@@ -276,6 +276,46 @@ class GraphTransformerNet(torch.nn.Module):
         x = global_mean_pool(x, batch)
         logits = self.lin(x).squeeze(-1)
         return (logits, attentions) if return_attn else logits
+
+
+class GraphSAGESkipNet(torch.nn.Module):
+    def __init__(self, in_channels, hidden_channels=64, num_layers=2, dropout=0.3, use_pos_enc=False):
+        super().__init__()
+        self.convs = torch.nn.ModuleList()
+        self.skips = torch.nn.ModuleList()
+        self.dropout = dropout
+        self.use_pos_enc = use_pos_enc
+
+        # Primo layer
+        self.convs.append(SAGEConv(in_channels, hidden_channels))
+        self.skips.append(torch.nn.Linear(in_channels, hidden_channels))
+
+        # Layer successivi
+        for _ in range(num_layers - 1):
+            self.convs.append(SAGEConv(hidden_channels, hidden_channels))
+            self.skips.append(torch.nn.Identity())
+
+        # Output layer: 2 * hidden_channels (mean + max concatenati)
+        self.lin = torch.nn.Linear(hidden_channels * 2, 1)
+        self.act = torch.nn.ELU()
+
+    def forward(self, x, edge_index, batch, pos_enc=None):
+        if self.use_pos_enc and pos_enc is not None:
+            x = x + pos_enc
+
+        for conv, skip in zip(self.convs, self.skips):
+            h = conv(x, edge_index)
+            x = h + skip(x)
+            x = self.act(x)
+            x = F.dropout(x, p=self.dropout, training=self.training)
+
+        # Global pooling: mean + max
+        x_mean = global_mean_pool(x, batch)
+        x_max = global_max_pool(x, batch)
+        x_pool = torch.cat([x_mean, x_max], dim=1)
+
+        logits = self.lin(x_pool).squeeze(-1)
+        return logits
 
 def train(model, loader, optimizer, criterion, device):
     model.train()
