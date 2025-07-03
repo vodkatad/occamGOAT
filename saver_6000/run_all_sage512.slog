@@ -1,0 +1,1625 @@
+Assuming unrestricted shared filesystem usage.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+all_graphsage_512        1
+call_sage               90
+total                   91
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 11:18:07 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.01-h64-d0.4-n2.done
+    log: data/GraphSage_512_b512-l0.01-h64-d0.4-n2.log
+    jobid: 7
+    benchmark: bench/GraphSage_512_b512-l0.01-h64-d0.4-n2.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.01-h64-d0.4-n2.done; Code has changed since last execution
+    wildcards: model=GraphSage_512, batch=512, lr=0.01, hl=64, dr=0.4, nl=2
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.01 -i 64 -d 0.4 -n 2 > data/GraphSage_512_b512-l0.01-h64-d0.4-n2.log
+            touch data/GraphSage_512_b512-l0.01-h64-d0.4-n2.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 11:29:16 2025]
+Finished job 7.
+1 of 91 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 11:29:16 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.0005-h128-d0.5-n2.done
+    log: data/GraphSage_512_b512-l0.0005-h128-d0.5-n2.log
+    jobid: 67
+    benchmark: bench/GraphSage_512_b512-l0.0005-h128-d0.5-n2.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.0005-h128-d0.5-n2.done; Code has changed since last execution
+    wildcards: model=GraphSage_512, batch=512, lr=0.0005, hl=128, dr=0.5, nl=2
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.0005 -i 128 -d 0.5 -n 2 > data/GraphSage_512_b512-l0.0005-h128-d0.5-n2.log
+            touch data/GraphSage_512_b512-l0.0005-h128-d0.5-n2.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 11:43:34 2025]
+Finished job 67.
+2 of 91 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 11:43:34 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.0005-h64-d0.6-n4.done
+    log: data/GraphSage_512_b512-l0.0005-h64-d0.6-n4.log
+    jobid: 57
+    benchmark: bench/GraphSage_512_b512-l0.0005-h64-d0.6-n4.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.0005-h64-d0.6-n4.done
+    wildcards: model=GraphSage_512, batch=512, lr=0.0005, hl=64, dr=0.6, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.0005 -i 64 -d 0.6 -n 4 > data/GraphSage_512_b512-l0.0005-h64-d0.6-n4.log
+            touch data/GraphSage_512_b512-l0.0005-h64-d0.6-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 12:12:08 2025]
+Finished job 57.
+3 of 91 steps (3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 12:12:08 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.0005-h128-d0.4-n4.done
+    log: data/GraphSage_512_b512-l0.0005-h128-d0.4-n4.log
+    jobid: 72
+    benchmark: bench/GraphSage_512_b512-l0.0005-h128-d0.4-n4.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.0005-h128-d0.4-n4.done
+    wildcards: model=GraphSage_512, batch=512, lr=0.0005, hl=128, dr=0.4, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.0005 -i 128 -d 0.4 -n 4 > data/GraphSage_512_b512-l0.0005-h128-d0.4-n4.log
+            touch data/GraphSage_512_b512-l0.0005-h128-d0.4-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Traceback (most recent call last):
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 298, in <module>
+    test_loss, test_acc, tumor_confusion = test(model, test_loader, criterion, device)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 269, in test
+    logits = model(data.x, data.edge_index, data.batch)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/CrabGOAT_classes.py", line 307, in forward
+    h = conv(x, edge_index)
+        ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/sage_conv.py", line 134, in forward
+    out = self.propagate(edge_index, x=x, size=size)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/torch_geometric.nn.conv.sage_conv_SAGEConv_propagate_vvzmgge6.py", line 214, in propagate
+    out = self.aggregate(
+          ^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/message_passing.py", line 618, in aggregate
+    return self.aggr_module(inputs, index, ptr=ptr, dim_size=dim_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/experimental.py", line 117, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 136, in __call__
+    raise e
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 128, in __call__
+    return super().__call__(x, index=index, ptr=ptr, dim_size=dim_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/basic.py", line 36, in forward
+    return self.reduce(x, index, ptr, dim_size, dim, reduce='mean')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 182, in reduce
+    return scatter(x, index, dim, dim_size, reduce)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/utils/_scatter.py", line 83, in scatter
+    out = src.new_zeros(size).scatter_add_(dim, index, src)
+          ^^^^^^^^^^^^^^^^^^^
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 478.00 MiB. GPU 1 has a total capacity of 15.56 GiB of which 174.62 MiB is free. Process 29809 has 15.39 GiB memory in use. Of the allocated memory 15.17 GiB is allocated by PyTorch, and 92.56 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[Wed Jul  2 12:51:42 2025]
+Error in rule call_sage:
+    jobid: 72
+    output: data/GraphSage_512_b512-l0.0005-h128-d0.4-n4.done
+    log: data/GraphSage_512_b512-l0.0005-h128-d0.4-n4.log (check log file(s) for error details)
+    shell:
+        
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.0005 -i 128 -d 0.4 -n 4 > data/GraphSage_512_b512-l0.0005-h128-d0.4-n4.log
+            touch data/GraphSage_512_b512-l0.0005-h128-d0.4-n4.done
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 12:51:42 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l1e-05-h128-d0.5-n4.done
+    log: data/GraphSage_512_b512-l1e-05-h128-d0.5-n4.log
+    jobid: 87
+    benchmark: bench/GraphSage_512_b512-l1e-05-h128-d0.5-n4.time
+    reason: Missing output files: data/GraphSage_512_b512-l1e-05-h128-d0.5-n4.done
+    wildcards: model=GraphSage_512, batch=512, lr=1e-05, hl=128, dr=0.5, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 1e-05 -i 128 -d 0.5 -n 4 > data/GraphSage_512_b512-l1e-05-h128-d0.5-n4.log
+            touch data/GraphSage_512_b512-l1e-05-h128-d0.5-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Traceback (most recent call last):
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 298, in <module>
+    test_loss, test_acc, tumor_confusion = test(model, test_loader, criterion, device)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 269, in test
+    logits = model(data.x, data.edge_index, data.batch)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/CrabGOAT_classes.py", line 307, in forward
+    h = conv(x, edge_index)
+        ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/sage_conv.py", line 134, in forward
+    out = self.propagate(edge_index, x=x, size=size)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/torch_geometric.nn.conv.sage_conv_SAGEConv_propagate_e76dotil.py", line 214, in propagate
+    out = self.aggregate(
+          ^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/message_passing.py", line 618, in aggregate
+    return self.aggr_module(inputs, index, ptr=ptr, dim_size=dim_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/experimental.py", line 117, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 136, in __call__
+    raise e
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 128, in __call__
+    return super().__call__(x, index=index, ptr=ptr, dim_size=dim_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/basic.py", line 36, in forward
+    return self.reduce(x, index, ptr, dim_size, dim, reduce='mean')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 182, in reduce
+    return scatter(x, index, dim, dim_size, reduce)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/utils/_scatter.py", line 83, in scatter
+    out = src.new_zeros(size).scatter_add_(dim, index, src)
+          ^^^^^^^^^^^^^^^^^^^
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 478.00 MiB. GPU 1 has a total capacity of 15.56 GiB of which 214.62 MiB is free. Process 651 has 15.35 GiB memory in use. Of the allocated memory 15.17 GiB is allocated by PyTorch, and 52.56 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[Wed Jul  2 13:18:52 2025]
+Error in rule call_sage:
+    jobid: 87
+    output: data/GraphSage_512_b512-l1e-05-h128-d0.5-n4.done
+    log: data/GraphSage_512_b512-l1e-05-h128-d0.5-n4.log (check log file(s) for error details)
+    shell:
+        
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 1e-05 -i 128 -d 0.5 -n 4 > data/GraphSage_512_b512-l1e-05-h128-d0.5-n4.log
+            touch data/GraphSage_512_b512-l1e-05-h128-d0.5-n4.done
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 13:18:52 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l1e-05-h64-d0.6-n3.done
+    log: data/GraphSage_512_b512-l1e-05-h64-d0.6-n3.log
+    jobid: 74
+    benchmark: bench/GraphSage_512_b512-l1e-05-h64-d0.6-n3.time
+    reason: Missing output files: data/GraphSage_512_b512-l1e-05-h64-d0.6-n3.done
+    wildcards: model=GraphSage_512, batch=512, lr=1e-05, hl=64, dr=0.6, nl=3
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 1e-05 -i 64 -d 0.6 -n 3 > data/GraphSage_512_b512-l1e-05-h64-d0.6-n3.log
+            touch data/GraphSage_512_b512-l1e-05-h64-d0.6-n3.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 13:38:33 2025]
+Finished job 74.
+4 of 91 steps (4%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 13:38:33 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.001-h128-d0.4-n2.done
+    log: data/GraphSage_512_b512-l0.001-h128-d0.4-n2.log
+    jobid: 52
+    benchmark: bench/GraphSage_512_b512-l0.001-h128-d0.4-n2.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.001-h128-d0.4-n2.done
+    wildcards: model=GraphSage_512, batch=512, lr=0.001, hl=128, dr=0.4, nl=2
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.001 -i 128 -d 0.4 -n 2 > data/GraphSage_512_b512-l0.001-h128-d0.4-n2.log
+            touch data/GraphSage_512_b512-l0.001-h128-d0.4-n2.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 14:06:27 2025]
+Finished job 52.
+5 of 91 steps (5%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 14:06:27 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.01-h64-d0.4-n4.done
+    log: data/GraphSage_512_b512-l0.01-h64-d0.4-n4.log
+    jobid: 9
+    benchmark: bench/GraphSage_512_b512-l0.01-h64-d0.4-n4.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.01-h64-d0.4-n4.done
+    wildcards: model=GraphSage_512, batch=512, lr=0.01, hl=64, dr=0.4, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.01 -i 64 -d 0.4 -n 4 > data/GraphSage_512_b512-l0.01-h64-d0.4-n4.log
+            touch data/GraphSage_512_b512-l0.01-h64-d0.4-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 14:23:49 2025]
+Finished job 9.
+6 of 91 steps (7%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 14:23:49 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.005-h64-d0.5-n4.done
+    log: data/GraphSage_512_b512-l0.005-h64-d0.5-n4.log
+    jobid: 24
+    benchmark: bench/GraphSage_512_b512-l0.005-h64-d0.5-n4.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.005-h64-d0.5-n4.done
+    wildcards: model=GraphSage_512, batch=512, lr=0.005, hl=64, dr=0.5, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.005 -i 64 -d 0.5 -n 4 > data/GraphSage_512_b512-l0.005-h64-d0.5-n4.log
+            touch data/GraphSage_512_b512-l0.005-h64-d0.5-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 14:45:08 2025]
+Finished job 24.
+7 of 91 steps (8%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 14:45:08 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.001-h64-d0.6-n4.done
+    log: data/GraphSage_512_b512-l0.001-h64-d0.6-n4.log
+    jobid: 39
+    benchmark: bench/GraphSage_512_b512-l0.001-h64-d0.6-n4.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.001-h64-d0.6-n4.done
+    wildcards: model=GraphSage_512, batch=512, lr=0.001, hl=64, dr=0.6, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.001 -i 64 -d 0.6 -n 4 > data/GraphSage_512_b512-l0.001-h64-d0.6-n4.log
+            touch data/GraphSage_512_b512-l0.001-h64-d0.6-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 15:09:54 2025]
+Finished job 39.
+8 of 91 steps (9%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 15:09:54 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.001-h64-d0.6-n2.done
+    log: data/GraphSage_512_b512-l0.001-h64-d0.6-n2.log
+    jobid: 37
+    benchmark: bench/GraphSage_512_b512-l0.001-h64-d0.6-n2.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.001-h64-d0.6-n2.done
+    wildcards: model=GraphSage_512, batch=512, lr=0.001, hl=64, dr=0.6, nl=2
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.001 -i 64 -d 0.6 -n 2 > data/GraphSage_512_b512-l0.001-h64-d0.6-n2.log
+            touch data/GraphSage_512_b512-l0.001-h64-d0.6-n2.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 15:19:37 2025]
+Finished job 37.
+9 of 91 steps (10%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 15:19:37 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.001-h128-d0.4-n4.done
+    log: data/GraphSage_512_b512-l0.001-h128-d0.4-n4.log
+    jobid: 54
+    benchmark: bench/GraphSage_512_b512-l0.001-h128-d0.4-n4.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.001-h128-d0.4-n4.done
+    wildcards: model=GraphSage_512, batch=512, lr=0.001, hl=128, dr=0.4, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.001 -i 128 -d 0.4 -n 4 > data/GraphSage_512_b512-l0.001-h128-d0.4-n4.log
+            touch data/GraphSage_512_b512-l0.001-h128-d0.4-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Traceback (most recent call last):
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 298, in <module>
+    test_loss, test_acc, tumor_confusion = test(model, test_loader, criterion, device)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 269, in test
+    logits = model(data.x, data.edge_index, data.batch)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/CrabGOAT_classes.py", line 307, in forward
+    h = conv(x, edge_index)
+        ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/sage_conv.py", line 134, in forward
+    out = self.propagate(edge_index, x=x, size=size)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/torch_geometric.nn.conv.sage_conv_SAGEConv_propagate_4jlobq1b.py", line 214, in propagate
+    out = self.aggregate(
+          ^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/message_passing.py", line 618, in aggregate
+    return self.aggr_module(inputs, index, ptr=ptr, dim_size=dim_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/experimental.py", line 117, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 136, in __call__
+    raise e
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 128, in __call__
+    return super().__call__(x, index=index, ptr=ptr, dim_size=dim_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/basic.py", line 36, in forward
+    return self.reduce(x, index, ptr, dim_size, dim, reduce='mean')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 182, in reduce
+    return scatter(x, index, dim, dim_size, reduce)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/utils/_scatter.py", line 83, in scatter
+    out = src.new_zeros(size).scatter_add_(dim, index, src)
+          ^^^^^^^^^^^^^^^^^^^
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 478.00 MiB. GPU 1 has a total capacity of 15.56 GiB of which 214.62 MiB is free. Process 13525 has 15.35 GiB memory in use. Of the allocated memory 15.17 GiB is allocated by PyTorch, and 52.56 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[Wed Jul  2 16:14:16 2025]
+Error in rule call_sage:
+    jobid: 54
+    output: data/GraphSage_512_b512-l0.001-h128-d0.4-n4.done
+    log: data/GraphSage_512_b512-l0.001-h128-d0.4-n4.log (check log file(s) for error details)
+    shell:
+        
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.001 -i 128 -d 0.4 -n 4 > data/GraphSage_512_b512-l0.001-h128-d0.4-n4.log
+            touch data/GraphSage_512_b512-l0.001-h128-d0.4-n4.done
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 16:14:17 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.0005-h128-d0.5-n4.done
+    log: data/GraphSage_512_b512-l0.0005-h128-d0.5-n4.log
+    jobid: 69
+    benchmark: bench/GraphSage_512_b512-l0.0005-h128-d0.5-n4.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.0005-h128-d0.5-n4.done
+    wildcards: model=GraphSage_512, batch=512, lr=0.0005, hl=128, dr=0.5, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.0005 -i 128 -d 0.5 -n 4 > data/GraphSage_512_b512-l0.0005-h128-d0.5-n4.log
+            touch data/GraphSage_512_b512-l0.0005-h128-d0.5-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Traceback (most recent call last):
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 298, in <module>
+    test_loss, test_acc, tumor_confusion = test(model, test_loader, criterion, device)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 269, in test
+    logits = model(data.x, data.edge_index, data.batch)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/CrabGOAT_classes.py", line 307, in forward
+    h = conv(x, edge_index)
+        ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/sage_conv.py", line 134, in forward
+    out = self.propagate(edge_index, x=x, size=size)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/torch_geometric.nn.conv.sage_conv_SAGEConv_propagate_k0550t5z.py", line 214, in propagate
+    out = self.aggregate(
+          ^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/message_passing.py", line 618, in aggregate
+    return self.aggr_module(inputs, index, ptr=ptr, dim_size=dim_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/experimental.py", line 117, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 136, in __call__
+    raise e
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 128, in __call__
+    return super().__call__(x, index=index, ptr=ptr, dim_size=dim_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/basic.py", line 36, in forward
+    return self.reduce(x, index, ptr, dim_size, dim, reduce='mean')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 182, in reduce
+    return scatter(x, index, dim, dim_size, reduce)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/utils/_scatter.py", line 83, in scatter
+    out = src.new_zeros(size).scatter_add_(dim, index, src)
+          ^^^^^^^^^^^^^^^^^^^
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 478.00 MiB. GPU 1 has a total capacity of 15.56 GiB of which 214.62 MiB is free. Process 18207 has 15.35 GiB memory in use. Of the allocated memory 15.17 GiB is allocated by PyTorch, and 52.56 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[Wed Jul  2 18:00:58 2025]
+Error in rule call_sage:
+    jobid: 69
+    output: data/GraphSage_512_b512-l0.0005-h128-d0.5-n4.done
+    log: data/GraphSage_512_b512-l0.0005-h128-d0.5-n4.log (check log file(s) for error details)
+    shell:
+        
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.0005 -i 128 -d 0.5 -n 4 > data/GraphSage_512_b512-l0.0005-h128-d0.5-n4.log
+            touch data/GraphSage_512_b512-l0.0005-h128-d0.5-n4.done
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 18:00:58 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l1e-05-h128-d0.6-n4.done
+    log: data/GraphSage_512_b512-l1e-05-h128-d0.6-n4.log
+    jobid: 84
+    benchmark: bench/GraphSage_512_b512-l1e-05-h128-d0.6-n4.time
+    reason: Missing output files: data/GraphSage_512_b512-l1e-05-h128-d0.6-n4.done
+    wildcards: model=GraphSage_512, batch=512, lr=1e-05, hl=128, dr=0.6, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 1e-05 -i 128 -d 0.6 -n 4 > data/GraphSage_512_b512-l1e-05-h128-d0.6-n4.log
+            touch data/GraphSage_512_b512-l1e-05-h128-d0.6-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Traceback (most recent call last):
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 298, in <module>
+    test_loss, test_acc, tumor_confusion = test(model, test_loader, criterion, device)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 269, in test
+    logits = model(data.x, data.edge_index, data.batch)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/CrabGOAT_classes.py", line 307, in forward
+    h = conv(x, edge_index)
+        ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/sage_conv.py", line 134, in forward
+    out = self.propagate(edge_index, x=x, size=size)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/torch_geometric.nn.conv.sage_conv_SAGEConv_propagate_pt59b3u3.py", line 214, in propagate
+    out = self.aggregate(
+          ^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/message_passing.py", line 618, in aggregate
+    return self.aggr_module(inputs, index, ptr=ptr, dim_size=dim_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/experimental.py", line 117, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 136, in __call__
+    raise e
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 128, in __call__
+    return super().__call__(x, index=index, ptr=ptr, dim_size=dim_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/basic.py", line 36, in forward
+    return self.reduce(x, index, ptr, dim_size, dim, reduce='mean')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 182, in reduce
+    return scatter(x, index, dim, dim_size, reduce)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/utils/_scatter.py", line 83, in scatter
+    out = src.new_zeros(size).scatter_add_(dim, index, src)
+          ^^^^^^^^^^^^^^^^^^^
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 478.00 MiB. GPU 1 has a total capacity of 15.56 GiB of which 174.62 MiB is free. Process 27248 has 15.39 GiB memory in use. Of the allocated memory 15.17 GiB is allocated by PyTorch, and 92.56 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[Wed Jul  2 18:32:42 2025]
+Error in rule call_sage:
+    jobid: 84
+    output: data/GraphSage_512_b512-l1e-05-h128-d0.6-n4.done
+    log: data/GraphSage_512_b512-l1e-05-h128-d0.6-n4.log (check log file(s) for error details)
+    shell:
+        
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 1e-05 -i 128 -d 0.6 -n 4 > data/GraphSage_512_b512-l1e-05-h128-d0.6-n4.log
+            touch data/GraphSage_512_b512-l1e-05-h128-d0.6-n4.done
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 18:32:42 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l1e-05-h64-d0.6-n2.done
+    log: data/GraphSage_512_b512-l1e-05-h64-d0.6-n2.log
+    jobid: 73
+    benchmark: bench/GraphSage_512_b512-l1e-05-h64-d0.6-n2.time
+    reason: Missing output files: data/GraphSage_512_b512-l1e-05-h64-d0.6-n2.done
+    wildcards: model=GraphSage_512, batch=512, lr=1e-05, hl=64, dr=0.6, nl=2
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 1e-05 -i 64 -d 0.6 -n 2 > data/GraphSage_512_b512-l1e-05-h64-d0.6-n2.log
+            touch data/GraphSage_512_b512-l1e-05-h64-d0.6-n2.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 18:42:18 2025]
+Finished job 73.
+10 of 91 steps (11%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 18:42:18 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l1e-05-h128-d0.4-n2.done
+    log: data/GraphSage_512_b512-l1e-05-h128-d0.4-n2.log
+    jobid: 88
+    benchmark: bench/GraphSage_512_b512-l1e-05-h128-d0.4-n2.time
+    reason: Missing output files: data/GraphSage_512_b512-l1e-05-h128-d0.4-n2.done
+    wildcards: model=GraphSage_512, batch=512, lr=1e-05, hl=128, dr=0.4, nl=2
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 1e-05 -i 128 -d 0.4 -n 2 > data/GraphSage_512_b512-l1e-05-h128-d0.4-n2.log
+            touch data/GraphSage_512_b512-l1e-05-h128-d0.4-n2.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 20:54:11 2025]
+Finished job 88.
+11 of 91 steps (12%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 20:54:11 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.01-h64-d0.5-n4.done
+    log: data/GraphSage_512_b512-l0.01-h64-d0.5-n4.log
+    jobid: 6
+    benchmark: bench/GraphSage_512_b512-l0.01-h64-d0.5-n4.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.01-h64-d0.5-n4.done; Code has changed since last execution
+    wildcards: model=GraphSage_512, batch=512, lr=0.01, hl=64, dr=0.5, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.01 -i 64 -d 0.5 -n 4 > data/GraphSage_512_b512-l0.01-h64-d0.5-n4.log
+            touch data/GraphSage_512_b512-l0.01-h64-d0.5-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 21:17:02 2025]
+Finished job 6.
+12 of 91 steps (13%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 21:17:02 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.005-h64-d0.6-n4.done
+    log: data/GraphSage_512_b512-l0.005-h64-d0.6-n4.log
+    jobid: 21
+    benchmark: bench/GraphSage_512_b512-l0.005-h64-d0.6-n4.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.005-h64-d0.6-n4.done
+    wildcards: model=GraphSage_512, batch=512, lr=0.005, hl=64, dr=0.6, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.005 -i 64 -d 0.6 -n 4 > data/GraphSage_512_b512-l0.005-h64-d0.6-n4.log
+            touch data/GraphSage_512_b512-l0.005-h64-d0.6-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 21:37:54 2025]
+Finished job 21.
+13 of 91 steps (14%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 21:37:54 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.0005-h64-d0.5-n2.done
+    log: data/GraphSage_512_b512-l0.0005-h64-d0.5-n2.log
+    jobid: 58
+    benchmark: bench/GraphSage_512_b512-l0.0005-h64-d0.5-n2.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.0005-h64-d0.5-n2.done
+    wildcards: model=GraphSage_512, batch=512, lr=0.0005, hl=64, dr=0.5, nl=2
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.0005 -i 64 -d 0.5 -n 2 > data/GraphSage_512_b512-l0.0005-h64-d0.5-n2.log
+            touch data/GraphSage_512_b512-l0.0005-h64-d0.5-n2.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 22:20:15 2025]
+Finished job 58.
+14 of 91 steps (15%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 22:20:15 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.005-h128-d0.4-n4.done
+    log: data/GraphSage_512_b512-l0.005-h128-d0.4-n4.log
+    jobid: 36
+    benchmark: bench/GraphSage_512_b512-l0.005-h128-d0.4-n4.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.005-h128-d0.4-n4.done
+    wildcards: model=GraphSage_512, batch=512, lr=0.005, hl=128, dr=0.4, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.005 -i 128 -d 0.4 -n 4 > data/GraphSage_512_b512-l0.005-h128-d0.4-n4.log
+            touch data/GraphSage_512_b512-l0.005-h128-d0.4-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Traceback (most recent call last):
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 298, in <module>
+    test_loss, test_acc, tumor_confusion = test(model, test_loader, criterion, device)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 269, in test
+    logits = model(data.x, data.edge_index, data.batch)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/CrabGOAT_classes.py", line 307, in forward
+    h = conv(x, edge_index)
+        ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/sage_conv.py", line 134, in forward
+    out = self.propagate(edge_index, x=x, size=size)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/torch_geometric.nn.conv.sage_conv_SAGEConv_propagate_w4i0mo_u.py", line 214, in propagate
+    out = self.aggregate(
+          ^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/message_passing.py", line 618, in aggregate
+    return self.aggr_module(inputs, index, ptr=ptr, dim_size=dim_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/experimental.py", line 117, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 136, in __call__
+    raise e
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 128, in __call__
+    return super().__call__(x, index=index, ptr=ptr, dim_size=dim_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/basic.py", line 36, in forward
+    return self.reduce(x, index, ptr, dim_size, dim, reduce='mean')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 182, in reduce
+    return scatter(x, index, dim, dim_size, reduce)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/utils/_scatter.py", line 83, in scatter
+    out = src.new_zeros(size).scatter_add_(dim, index, src)
+          ^^^^^^^^^^^^^^^^^^^
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 478.00 MiB. GPU 1 has a total capacity of 15.56 GiB of which 174.62 MiB is free. Process 17132 has 15.39 GiB memory in use. Of the allocated memory 15.17 GiB is allocated by PyTorch, and 92.56 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[Wed Jul  2 22:51:22 2025]
+Error in rule call_sage:
+    jobid: 36
+    output: data/GraphSage_512_b512-l0.005-h128-d0.4-n4.done
+    log: data/GraphSage_512_b512-l0.005-h128-d0.4-n4.log (check log file(s) for error details)
+    shell:
+        
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.005 -i 128 -d 0.4 -n 4 > data/GraphSage_512_b512-l0.005-h128-d0.4-n4.log
+            touch data/GraphSage_512_b512-l0.005-h128-d0.4-n4.done
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 22:51:22 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.001-h128-d0.5-n4.done
+    log: data/GraphSage_512_b512-l0.001-h128-d0.5-n4.log
+    jobid: 51
+    benchmark: bench/GraphSage_512_b512-l0.001-h128-d0.5-n4.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.001-h128-d0.5-n4.done
+    wildcards: model=GraphSage_512, batch=512, lr=0.001, hl=128, dr=0.5, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.001 -i 128 -d 0.5 -n 4 > data/GraphSage_512_b512-l0.001-h128-d0.5-n4.log
+            touch data/GraphSage_512_b512-l0.001-h128-d0.5-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Traceback (most recent call last):
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 298, in <module>
+    test_loss, test_acc, tumor_confusion = test(model, test_loader, criterion, device)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 269, in test
+    logits = model(data.x, data.edge_index, data.batch)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/CrabGOAT_classes.py", line 307, in forward
+    h = conv(x, edge_index)
+        ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/sage_conv.py", line 134, in forward
+    out = self.propagate(edge_index, x=x, size=size)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/torch_geometric.nn.conv.sage_conv_SAGEConv_propagate_nj47wk9t.py", line 214, in propagate
+    out = self.aggregate(
+          ^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/message_passing.py", line 618, in aggregate
+    return self.aggr_module(inputs, index, ptr=ptr, dim_size=dim_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/experimental.py", line 117, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 136, in __call__
+    raise e
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 128, in __call__
+    return super().__call__(x, index=index, ptr=ptr, dim_size=dim_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/basic.py", line 36, in forward
+    return self.reduce(x, index, ptr, dim_size, dim, reduce='mean')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 182, in reduce
+    return scatter(x, index, dim, dim_size, reduce)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/utils/_scatter.py", line 83, in scatter
+    out = src.new_zeros(size).scatter_add_(dim, index, src)
+          ^^^^^^^^^^^^^^^^^^^
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 478.00 MiB. GPU 1 has a total capacity of 15.56 GiB of which 214.62 MiB is free. Process 19947 has 15.35 GiB memory in use. Of the allocated memory 15.17 GiB is allocated by PyTorch, and 52.56 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[Wed Jul  2 23:41:34 2025]
+Error in rule call_sage:
+    jobid: 51
+    output: data/GraphSage_512_b512-l0.001-h128-d0.5-n4.done
+    log: data/GraphSage_512_b512-l0.001-h128-d0.5-n4.log (check log file(s) for error details)
+    shell:
+        
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.001 -i 128 -d 0.5 -n 4 > data/GraphSage_512_b512-l0.001-h128-d0.5-n4.log
+            touch data/GraphSage_512_b512-l0.001-h128-d0.5-n4.done
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 23:41:34 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.0005-h128-d0.6-n4.done
+    log: data/GraphSage_512_b512-l0.0005-h128-d0.6-n4.log
+    jobid: 66
+    benchmark: bench/GraphSage_512_b512-l0.0005-h128-d0.6-n4.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.0005-h128-d0.6-n4.done
+    wildcards: model=GraphSage_512, batch=512, lr=0.0005, hl=128, dr=0.6, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.0005 -i 128 -d 0.6 -n 4 > data/GraphSage_512_b512-l0.0005-h128-d0.6-n4.log
+            touch data/GraphSage_512_b512-l0.0005-h128-d0.6-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Traceback (most recent call last):
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 298, in <module>
+    test_loss, test_acc, tumor_confusion = test(model, test_loader, criterion, device)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 269, in test
+    logits = model(data.x, data.edge_index, data.batch)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/CrabGOAT_classes.py", line 307, in forward
+    h = conv(x, edge_index)
+        ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/sage_conv.py", line 134, in forward
+    out = self.propagate(edge_index, x=x, size=size)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/torch_geometric.nn.conv.sage_conv_SAGEConv_propagate_sz8zu2hl.py", line 214, in propagate
+    out = self.aggregate(
+          ^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/message_passing.py", line 618, in aggregate
+    return self.aggr_module(inputs, index, ptr=ptr, dim_size=dim_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/experimental.py", line 117, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 136, in __call__
+    raise e
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 128, in __call__
+    return super().__call__(x, index=index, ptr=ptr, dim_size=dim_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/basic.py", line 36, in forward
+    return self.reduce(x, index, ptr, dim_size, dim, reduce='mean')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 182, in reduce
+    return scatter(x, index, dim, dim_size, reduce)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/utils/_scatter.py", line 83, in scatter
+    out = src.new_zeros(size).scatter_add_(dim, index, src)
+          ^^^^^^^^^^^^^^^^^^^
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 478.00 MiB. GPU 1 has a total capacity of 15.56 GiB of which 174.62 MiB is free. Process 24199 has 15.39 GiB memory in use. Of the allocated memory 15.17 GiB is allocated by PyTorch, and 92.56 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[Thu Jul  3 01:20:33 2025]
+Error in rule call_sage:
+    jobid: 66
+    output: data/GraphSage_512_b512-l0.0005-h128-d0.6-n4.done
+    log: data/GraphSage_512_b512-l0.0005-h128-d0.6-n4.log (check log file(s) for error details)
+    shell:
+        
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.0005 -i 128 -d 0.6 -n 4 > data/GraphSage_512_b512-l0.0005-h128-d0.6-n4.log
+            touch data/GraphSage_512_b512-l0.0005-h128-d0.6-n4.done
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 01:20:33 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.001-h64-d0.4-n2.done
+    log: data/GraphSage_512_b512-l0.001-h64-d0.4-n2.log
+    jobid: 43
+    benchmark: bench/GraphSage_512_b512-l0.001-h64-d0.4-n2.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.001-h64-d0.4-n2.done
+    wildcards: model=GraphSage_512, batch=512, lr=0.001, hl=64, dr=0.4, nl=2
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.001 -i 64 -d 0.4 -n 2 > data/GraphSage_512_b512-l0.001-h64-d0.4-n2.log
+            touch data/GraphSage_512_b512-l0.001-h64-d0.4-n2.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Thu Jul  3 01:40:31 2025]
+Finished job 43.
+15 of 91 steps (16%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 01:40:31 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l1e-05-h64-d0.4-n4.done
+    log: data/GraphSage_512_b512-l1e-05-h64-d0.4-n4.log
+    jobid: 81
+    benchmark: bench/GraphSage_512_b512-l1e-05-h64-d0.4-n4.time
+    reason: Missing output files: data/GraphSage_512_b512-l1e-05-h64-d0.4-n4.done
+    wildcards: model=GraphSage_512, batch=512, lr=1e-05, hl=64, dr=0.4, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 1e-05 -i 64 -d 0.4 -n 4 > data/GraphSage_512_b512-l1e-05-h64-d0.4-n4.log
+            touch data/GraphSage_512_b512-l1e-05-h64-d0.4-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Thu Jul  3 02:06:27 2025]
+Finished job 81.
+16 of 91 steps (18%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 02:06:27 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l1e-05-h64-d0.6-n4.done
+    log: data/GraphSage_512_b512-l1e-05-h64-d0.6-n4.log
+    jobid: 75
+    benchmark: bench/GraphSage_512_b512-l1e-05-h64-d0.6-n4.time
+    reason: Missing output files: data/GraphSage_512_b512-l1e-05-h64-d0.6-n4.done
+    wildcards: model=GraphSage_512, batch=512, lr=1e-05, hl=64, dr=0.6, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 1e-05 -i 64 -d 0.6 -n 4 > data/GraphSage_512_b512-l1e-05-h64-d0.6-n4.log
+            touch data/GraphSage_512_b512-l1e-05-h64-d0.6-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Thu Jul  3 02:22:20 2025]
+Finished job 75.
+17 of 91 steps (19%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 02:22:20 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l1e-05-h128-d0.4-n4.done
+    log: data/GraphSage_512_b512-l1e-05-h128-d0.4-n4.log
+    jobid: 90
+    benchmark: bench/GraphSage_512_b512-l1e-05-h128-d0.4-n4.time
+    reason: Missing output files: data/GraphSage_512_b512-l1e-05-h128-d0.4-n4.done
+    wildcards: model=GraphSage_512, batch=512, lr=1e-05, hl=128, dr=0.4, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 1e-05 -i 128 -d 0.4 -n 4 > data/GraphSage_512_b512-l1e-05-h128-d0.4-n4.log
+            touch data/GraphSage_512_b512-l1e-05-h128-d0.4-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Traceback (most recent call last):
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 298, in <module>
+    test_loss, test_acc, tumor_confusion = test(model, test_loader, criterion, device)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 269, in test
+    logits = model(data.x, data.edge_index, data.batch)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/CrabGOAT_classes.py", line 307, in forward
+    h = conv(x, edge_index)
+        ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/sage_conv.py", line 134, in forward
+    out = self.propagate(edge_index, x=x, size=size)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/torch_geometric.nn.conv.sage_conv_SAGEConv_propagate_1ex2xcea.py", line 214, in propagate
+    out = self.aggregate(
+          ^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/message_passing.py", line 618, in aggregate
+    return self.aggr_module(inputs, index, ptr=ptr, dim_size=dim_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/experimental.py", line 117, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 136, in __call__
+    raise e
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 128, in __call__
+    return super().__call__(x, index=index, ptr=ptr, dim_size=dim_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/basic.py", line 36, in forward
+    return self.reduce(x, index, ptr, dim_size, dim, reduce='mean')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 182, in reduce
+    return scatter(x, index, dim, dim_size, reduce)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/utils/_scatter.py", line 83, in scatter
+    out = src.new_zeros(size).scatter_add_(dim, index, src)
+          ^^^^^^^^^^^^^^^^^^^
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 478.00 MiB. GPU 1 has a total capacity of 15.56 GiB of which 174.62 MiB is free. Process 5723 has 15.39 GiB memory in use. Of the allocated memory 15.17 GiB is allocated by PyTorch, and 92.56 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[Thu Jul  3 02:49:22 2025]
+Error in rule call_sage:
+    jobid: 90
+    output: data/GraphSage_512_b512-l1e-05-h128-d0.4-n4.done
+    log: data/GraphSage_512_b512-l1e-05-h128-d0.4-n4.log (check log file(s) for error details)
+    shell:
+        
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 1e-05 -i 128 -d 0.4 -n 4 > data/GraphSage_512_b512-l1e-05-h128-d0.4-n4.log
+            touch data/GraphSage_512_b512-l1e-05-h128-d0.4-n4.done
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 02:49:22 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.0005-h64-d0.5-n4.done
+    log: data/GraphSage_512_b512-l0.0005-h64-d0.5-n4.log
+    jobid: 60
+    benchmark: bench/GraphSage_512_b512-l0.0005-h64-d0.5-n4.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.0005-h64-d0.5-n4.done
+    wildcards: model=GraphSage_512, batch=512, lr=0.0005, hl=64, dr=0.5, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.0005 -i 64 -d 0.5 -n 4 > data/GraphSage_512_b512-l0.0005-h64-d0.5-n4.log
+            touch data/GraphSage_512_b512-l0.0005-h64-d0.5-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Thu Jul  3 03:29:46 2025]
+Finished job 60.
+18 of 91 steps (20%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 03:29:46 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.0005-h128-d0.6-n2.done
+    log: data/GraphSage_512_b512-l0.0005-h128-d0.6-n2.log
+    jobid: 64
+    benchmark: bench/GraphSage_512_b512-l0.0005-h128-d0.6-n2.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.0005-h128-d0.6-n2.done
+    wildcards: model=GraphSage_512, batch=512, lr=0.0005, hl=128, dr=0.6, nl=2
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.0005 -i 128 -d 0.6 -n 2 > data/GraphSage_512_b512-l0.0005-h128-d0.6-n2.log
+            touch data/GraphSage_512_b512-l0.0005-h128-d0.6-n2.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Thu Jul  3 03:43:46 2025]
+Finished job 64.
+19 of 91 steps (21%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 03:43:46 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.001-h64-d0.4-n4.done
+    log: data/GraphSage_512_b512-l0.001-h64-d0.4-n4.log
+    jobid: 45
+    benchmark: bench/GraphSage_512_b512-l0.001-h64-d0.4-n4.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.001-h64-d0.4-n4.done
+    wildcards: model=GraphSage_512, batch=512, lr=0.001, hl=64, dr=0.4, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.001 -i 64 -d 0.4 -n 4 > data/GraphSage_512_b512-l0.001-h64-d0.4-n4.log
+            touch data/GraphSage_512_b512-l0.001-h64-d0.4-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Thu Jul  3 04:11:31 2025]
+Finished job 45.
+20 of 91 steps (22%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 04:11:31 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.01-h64-d0.4-n3.done
+    log: data/GraphSage_512_b512-l0.01-h64-d0.4-n3.log
+    jobid: 8
+    benchmark: bench/GraphSage_512_b512-l0.01-h64-d0.4-n3.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.01-h64-d0.4-n3.done
+    wildcards: model=GraphSage_512, batch=512, lr=0.01, hl=64, dr=0.4, nl=3
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.01 -i 64 -d 0.4 -n 3 > data/GraphSage_512_b512-l0.01-h64-d0.4-n3.log
+            touch data/GraphSage_512_b512-l0.01-h64-d0.4-n3.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Thu Jul  3 04:42:02 2025]
+Finished job 8.
+21 of 91 steps (23%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 04:42:02 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.005-h128-d0.6-n4.done
+    log: data/GraphSage_512_b512-l0.005-h128-d0.6-n4.log
+    jobid: 30
+    benchmark: bench/GraphSage_512_b512-l0.005-h128-d0.6-n4.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.005-h128-d0.6-n4.done
+    wildcards: model=GraphSage_512, batch=512, lr=0.005, hl=128, dr=0.6, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.005 -i 128 -d 0.6 -n 4 > data/GraphSage_512_b512-l0.005-h128-d0.6-n4.log
+            touch data/GraphSage_512_b512-l0.005-h128-d0.6-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Traceback (most recent call last):
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 298, in <module>
+    test_loss, test_acc, tumor_confusion = test(model, test_loader, criterion, device)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 269, in test
+    logits = model(data.x, data.edge_index, data.batch)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/CrabGOAT_classes.py", line 307, in forward
+    h = conv(x, edge_index)
+        ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/sage_conv.py", line 134, in forward
+    out = self.propagate(edge_index, x=x, size=size)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/torch_geometric.nn.conv.sage_conv_SAGEConv_propagate_mca2n75e.py", line 214, in propagate
+    out = self.aggregate(
+          ^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/message_passing.py", line 618, in aggregate
+    return self.aggr_module(inputs, index, ptr=ptr, dim_size=dim_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/experimental.py", line 117, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 136, in __call__
+    raise e
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 128, in __call__
+    return super().__call__(x, index=index, ptr=ptr, dim_size=dim_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/basic.py", line 36, in forward
+    return self.reduce(x, index, ptr, dim_size, dim, reduce='mean')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 182, in reduce
+    return scatter(x, index, dim, dim_size, reduce)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/utils/_scatter.py", line 83, in scatter
+    out = src.new_zeros(size).scatter_add_(dim, index, src)
+          ^^^^^^^^^^^^^^^^^^^
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 478.00 MiB. GPU 1 has a total capacity of 15.56 GiB of which 214.62 MiB is free. Process 17819 has 15.35 GiB memory in use. Of the allocated memory 15.17 GiB is allocated by PyTorch, and 52.56 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[Thu Jul  3 05:12:12 2025]
+Error in rule call_sage:
+    jobid: 30
+    output: data/GraphSage_512_b512-l0.005-h128-d0.6-n4.done
+    log: data/GraphSage_512_b512-l0.005-h128-d0.6-n4.log (check log file(s) for error details)
+    shell:
+        
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.005 -i 128 -d 0.6 -n 4 > data/GraphSage_512_b512-l0.005-h128-d0.6-n4.log
+            touch data/GraphSage_512_b512-l0.005-h128-d0.6-n4.done
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 05:12:12 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.005-h64-d0.5-n3.done
+    log: data/GraphSage_512_b512-l0.005-h64-d0.5-n3.log
+    jobid: 23
+    benchmark: bench/GraphSage_512_b512-l0.005-h64-d0.5-n3.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.005-h64-d0.5-n3.done
+    wildcards: model=GraphSage_512, batch=512, lr=0.005, hl=64, dr=0.5, nl=3
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.005 -i 64 -d 0.5 -n 3 > data/GraphSage_512_b512-l0.005-h64-d0.5-n3.log
+            touch data/GraphSage_512_b512-l0.005-h64-d0.5-n3.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Thu Jul  3 05:37:39 2025]
+Finished job 23.
+22 of 91 steps (24%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 05:37:39 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.01-h128-d0.5-n4.done
+    log: data/GraphSage_512_b512-l0.01-h128-d0.5-n4.log
+    jobid: 15
+    benchmark: bench/GraphSage_512_b512-l0.01-h128-d0.5-n4.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.01-h128-d0.5-n4.done
+    wildcards: model=GraphSage_512, batch=512, lr=0.01, hl=128, dr=0.5, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.01 -i 128 -d 0.5 -n 4 > data/GraphSage_512_b512-l0.01-h128-d0.5-n4.log
+            touch data/GraphSage_512_b512-l0.01-h128-d0.5-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Traceback (most recent call last):
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 298, in <module>
+    test_loss, test_acc, tumor_confusion = test(model, test_loader, criterion, device)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 269, in test
+    logits = model(data.x, data.edge_index, data.batch)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/CrabGOAT_classes.py", line 307, in forward
+    h = conv(x, edge_index)
+        ^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/sage_conv.py", line 134, in forward
+    out = self.propagate(edge_index, x=x, size=size)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/torch_geometric.nn.conv.sage_conv_SAGEConv_propagate_epx4i8hh.py", line 214, in propagate
+    out = self.aggregate(
+          ^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/message_passing.py", line 618, in aggregate
+    return self.aggr_module(inputs, index, ptr=ptr, dim_size=dim_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/experimental.py", line 117, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 136, in __call__
+    raise e
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 128, in __call__
+    return super().__call__(x, index=index, ptr=ptr, dim_size=dim_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/basic.py", line 36, in forward
+    return self.reduce(x, index, ptr, dim_size, dim, reduce='mean')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/aggr/base.py", line 182, in reduce
+    return scatter(x, index, dim, dim_size, reduce)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/utils/_scatter.py", line 83, in scatter
+    out = src.new_zeros(size).scatter_add_(dim, index, src)
+          ^^^^^^^^^^^^^^^^^^^
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 478.00 MiB. GPU 1 has a total capacity of 15.56 GiB of which 214.62 MiB is free. Process 22666 has 15.35 GiB memory in use. Of the allocated memory 15.17 GiB is allocated by PyTorch, and 52.56 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[Thu Jul  3 06:16:03 2025]
+Error in rule call_sage:
+    jobid: 15
+    output: data/GraphSage_512_b512-l0.01-h128-d0.5-n4.done
+    log: data/GraphSage_512_b512-l0.01-h128-d0.5-n4.log (check log file(s) for error details)
+    shell:
+        
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.01 -i 128 -d 0.5 -n 4 > data/GraphSage_512_b512-l0.01-h128-d0.5-n4.log
+            touch data/GraphSage_512_b512-l0.01-h128-d0.5-n4.done
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 06:16:03 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.001-h64-d0.6-n3.done
+    log: data/GraphSage_512_b512-l0.001-h64-d0.6-n3.log
+    jobid: 38
+    benchmark: bench/GraphSage_512_b512-l0.001-h64-d0.6-n3.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.001-h64-d0.6-n3.done
+    wildcards: model=GraphSage_512, batch=512, lr=0.001, hl=64, dr=0.6, nl=3
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.001 -i 64 -d 0.6 -n 3 > data/GraphSage_512_b512-l0.001-h64-d0.6-n3.log
+            touch data/GraphSage_512_b512-l0.001-h64-d0.6-n3.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Thu Jul  3 06:39:34 2025]
+Finished job 38.
+23 of 91 steps (25%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 06:39:34 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l1e-05-h128-d0.6-n2.done
+    log: data/GraphSage_512_b512-l1e-05-h128-d0.6-n2.log
+    jobid: 82
+    benchmark: bench/GraphSage_512_b512-l1e-05-h128-d0.6-n2.time
+    reason: Missing output files: data/GraphSage_512_b512-l1e-05-h128-d0.6-n2.done; Code has changed since last execution
+    wildcards: model=GraphSage_512, batch=512, lr=1e-05, hl=128, dr=0.6, nl=2
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 1e-05 -i 128 -d 0.6 -n 2 > data/GraphSage_512_b512-l1e-05-h128-d0.6-n2.log
+            touch data/GraphSage_512_b512-l1e-05-h128-d0.6-n2.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Thu Jul  3 06:56:26 2025]
+Finished job 82.
+24 of 91 steps (26%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 06:56:26 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.001-h128-d0.4-n3.done
+    log: data/GraphSage_512_b512-l0.001-h128-d0.4-n3.log
+    jobid: 53
+    benchmark: bench/GraphSage_512_b512-l0.001-h128-d0.4-n3.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.001-h128-d0.4-n3.done
+    wildcards: model=GraphSage_512, batch=512, lr=0.001, hl=128, dr=0.4, nl=3
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.001 -i 128 -d 0.4 -n 3 > data/GraphSage_512_b512-l0.001-h128-d0.4-n3.log
+            touch data/GraphSage_512_b512-l0.001-h128-d0.4-n3.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Thu Jul  3 07:45:59 2025]
+Finished job 53.
+25 of 91 steps (27%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 07:45:59 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.005-h64-d0.5-n2.done
+    log: data/GraphSage_512_b512-l0.005-h64-d0.5-n2.log
+    jobid: 22
+    benchmark: bench/GraphSage_512_b512-l0.005-h64-d0.5-n2.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.005-h64-d0.5-n2.done; Code has changed since last execution
+    wildcards: model=GraphSage_512, batch=512, lr=0.005, hl=64, dr=0.5, nl=2
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.005 -i 64 -d 0.5 -n 2 > data/GraphSage_512_b512-l0.005-h64-d0.5-n2.log
+            touch data/GraphSage_512_b512-l0.005-h64-d0.5-n2.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Thu Jul  3 08:00:04 2025]
+Finished job 22.
+26 of 91 steps (29%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 08:00:04 2025]
+localrule call_sage:
+    output: data/GraphSage_512_b512-l0.0005-h128-d0.5-n3.done
+    log: data/GraphSage_512_b512-l0.0005-h128-d0.5-n3.log
+    jobid: 68
+    benchmark: bench/GraphSage_512_b512-l0.0005-h128-d0.5-n3.time
+    reason: Missing output files: data/GraphSage_512_b512-l0.0005-h128-d0.5-n3.done
+    wildcards: model=GraphSage_512, batch=512, lr=0.0005, hl=128, dr=0.5, nl=3
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_512 -b 512 -l 0.0005 -i 128 -d 0.5 -n 3 > data/GraphSage_512_b512-l0.0005-h128-d0.5-n3.log
+            touch data/GraphSage_512_b512-l0.0005-h128-d0.5-n3.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)

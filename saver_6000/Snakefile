@@ -50,9 +50,19 @@ rule call_sage:
             python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m {wildcards.model} -b {wildcards.batch} -l {wildcards.lr} -i {wildcards.hl} -d {wildcards.dr} -n {wildcards.nl} > {log.log}
             touch {output}
         """
-        
-rule mah:
-    shell:
+
+## inverted sample sheet for best architectures
+#[egrassi@occam saver_6000]>grep "Test Loss" data/*log | tr -d " " |  tr ":" "\t" | sort -k4,4n | tail -n 50 | cut -f 1 | sed 's/\.log/.done/1' | sed 's/data/data_sedie/1'| tr "\n" "," | sed 's/,/","/g' 
+
+rule all_inv:
+    input: ["data_sedie/GraphSage_128_b128-l0.005-h64-d0.5-n2.done","data_sedie/GraphSage_512_b512-l0.005-h64-d0.5-n4.done","data_sedie/GraphSage_128_b128-l0.0005-h128-d0.5-n2.done","data_sedie/GraphSage_128_b128-l0.0005-h64-d0.6-n4.done","data_sedie/GraphSage_128_b128-l0.001-h128-d0.4-n4.done","data_sedie/GraphSage_128_b128-l0.001-h64-d0.5-n4.done","data_sedie/GraphSage_512_b512-l0.0005-h128-d0.6-n2.done","data_sedie/GraphSage_512_b512-l0.001-h64-d0.4-n2.done","data_sedie/GraphSage_512_b512-l0.001-h64-d0.6-n2.done","data_sedie/GraphSage_512_b512-l0.01-h64-d0.5-n4.done","data_sedie/GraphSage_512_b512-l1e-05-h64-d0.6-n4.done","data_sedie/GraphSage_128_b128-l0.01-h64-d0.4-n3.done","data_sedie/GraphSage_512_b512-l0.005-h64-d0.5-n2.done","data_sedie/GraphSage_128_b128-l0.001-h128-d0.5-n4.done","data_sedie/GraphSage_128_b128-l0.005-h128-d0.4-n4.done","data_sedie/GraphSage_128_b128-l0.01-h128-d0.6-n4.done","data_sedie/GraphSage_512_b512-l0.01-h64-d0.4-n3.done","data_sedie/GraphSage_128_b128-l0.01-h128-d0.5-n3.done","data_sedie/GraphSage_128_b128-l0.005-h64-d0.6-n4.done","data_sedie/GraphSage_128_b128-l0.0005-h128-d0.5-n4.done","data_sedie/GraphSage_512_b512-l0.001-h64-d0.4-n4.done","data_sedie/GraphSage_512_b512-l0.0005-h64-d0.6-n4.done","data_sedie/GraphSage_512_b512-l0.001-h128-d0.4-n2.done","data_sedie/GraphSage_128_b128-l1e-05-h64-d0.6-n2.done","data_sedie/GraphSage_128_b128-l0.01-h64-d0.4-n2.done","data_sedie/GraphSage_512_b512-l1e-05-h128-d0.4-n2.done","data_sedie/GraphSage_512_b512-l0.001-h64-d0.6-n3.done","data_sedie/GraphSage_512_b512-l0.01-h64-d0.4-n2.done","data_sedie/GraphSage_128_b128-l0.01-h64-d0.6-n4.done","data_sedie/GraphSage_512_b512-l0.005-h64-d0.6-n4.done","data_sedie/GraphSage_128_b128-l1e-05-h64-d0.4-n4.done","data_sedie/GraphSage_512_b512-l0.01-h64-d0.4-n4.done","data_sedie/GraphSage_512_b512-l0.0005-h64-d0.5-n4.done","data_sedie/GraphSage_128_b128-l0.01-h64-d0.4-n4.done","data_sedie/GraphSage_128_b128-l0.005-h64-d0.5-n4.done","data_sedie/GraphSage_512_b512-l0.001-h64-d0.6-n4.done","data_sedie/GraphSage_128_b128-l1e-05-h128-d0.4-n2.done","data_sedie/GraphSage_512_b512-l1e-05-h64-d0.4-n4.done","data_sedie/GraphSage_512_b512-l0.0005-h128-d0.5-n2.done","data_sedie/GraphSage_128_b128-l0.005-h64-d0.5-n3.done","data_sedie/GraphSage_512_b512-l1e-05-h128-d0.6-n2.done","data_sedie/GraphSage_128_b128-l1e-05-h128-d0.6-n2.done","data_sedie/GraphSage_512_b512-l0.001-h128-d0.4-n3.done","data_sedie/GraphSage_128_b128-l1e-05-h128-d0.6-n4.done","data_sedie/GraphSage_128_b128-l0.001-h64-d0.6-n4.done","data_sedie/GraphSage_512_b512-l1e-05-h64-d0.6-n2.done","data_sedie/GraphSage_128_b128-l1e-05-h128-d0.4-n3.done","data_sedie/GraphSage_512_b512-l1e-05-h64-d0.6-n3.done","data_sedie/GraphSage_512_b512-l0.005-h64-d0.5-n3.done","data_sedie/GraphSage_128_b128-l0.0005-h128-d0.6-n4.done"] 
+
+rule call_sage_inv:
+    output: "data_sedie/{model}_b{batch}-l{lr}-h{hl}-d{dr}-n{nl}.done"
+    log: log="data_sedie/{model}_b{batch}-l{lr}-h{hl}-d{dr}-n{nl}.log"
+    benchmark: "bench_sedie/{model}_b{batch}-l{lr}-h{hl}-d{dr}-n{nl}.time"
+    shell: 
         """
-            python --version
+            python main.py -r data -s samplesheet_sedie.csv -p filtered_annotated -e data/general_edge_list.csv -m {wildcards.model} -b {wildcards.batch} -l {wildcards.lr} -i {wildcards.hl} -d {wildcards.dr} -n {wildcards.nl} > {log.log}
+            touch {output}
         """

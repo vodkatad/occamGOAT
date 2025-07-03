@@ -1,0 +1,481 @@
+Assuming unrestricted shared filesystem usage.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+all               1
+call_model       47
+total            48
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Jun 30 12:17:52 2025]
+localrule call_model:
+    output: data/transformer_3t_2l_b32-l5e-06-h64-d0.5.done
+    log: data/transformer_3t_2l_b32-l5e-06-h64-d0.5.log
+    jobid: 26
+    benchmark: bench/transformer_3t_2l_b32-l5e-06-h64-d0.5.time
+    reason: Missing output files: data/transformer_3t_2l_b32-l5e-06-h64-d0.5.done
+    wildcards: model=transformer_3t_2l, batch=32, lr=5e-06, hl=64, dr=0.5
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m transformer_3t_2l -b 32 -l 5e-06 -i 64 -d 0.5 > data/transformer_3t_2l_b32-l5e-06-h64-d0.5.log
+            touch data/transformer_3t_2l_b32-l5e-06-h64-d0.5.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Mon Jun 30 19:18:48 2025]
+Finished job 26.
+1 of 48 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Jun 30 19:18:48 2025]
+localrule call_model:
+    output: data/transformer_2t_2l_b32-l1e-05-h64-d0.4.done
+    log: data/transformer_2t_2l_b32-l1e-05-h64-d0.4.log
+    jobid: 4
+    benchmark: bench/transformer_2t_2l_b32-l1e-05-h64-d0.4.time
+    reason: Missing output files: data/transformer_2t_2l_b32-l1e-05-h64-d0.4.done
+    wildcards: model=transformer_2t_2l, batch=32, lr=1e-05, hl=64, dr=0.4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m transformer_2t_2l -b 32 -l 1e-05 -i 64 -d 0.4 > data/transformer_2t_2l_b32-l1e-05-h64-d0.4.log
+            touch data/transformer_2t_2l_b32-l1e-05-h64-d0.4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Mon Jun 30 20:14:30 2025]
+Finished job 4.
+2 of 48 steps (4%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Jun 30 20:14:30 2025]
+localrule call_model:
+    output: data/transformer_2t_2l_b64-l5e-05-h64-d0.4.done
+    log: data/transformer_2t_2l_b64-l5e-05-h64-d0.4.log
+    jobid: 19
+    benchmark: bench/transformer_2t_2l_b64-l5e-05-h64-d0.4.time
+    reason: Missing output files: data/transformer_2t_2l_b64-l5e-05-h64-d0.4.done
+    wildcards: model=transformer_2t_2l, batch=64, lr=5e-05, hl=64, dr=0.4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m transformer_2t_2l -b 64 -l 5e-05 -i 64 -d 0.4 > data/transformer_2t_2l_b64-l5e-05-h64-d0.4.log
+            touch data/transformer_2t_2l_b64-l5e-05-h64-d0.4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Mon Jun 30 22:34:41 2025]
+Finished job 19.
+3 of 48 steps (6%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Jun 30 22:34:41 2025]
+localrule call_model:
+    output: data/transformer_3t_2l_b64-l0.0001-h64-d0.6.done
+    log: data/transformer_3t_2l_b64-l0.0001-h64-d0.6.log
+    jobid: 48
+    benchmark: bench/transformer_3t_2l_b64-l0.0001-h64-d0.6.time
+    reason: Missing output files: data/transformer_3t_2l_b64-l0.0001-h64-d0.6.done
+    wildcards: model=transformer_3t_2l, batch=64, lr=0.0001, hl=64, dr=0.6
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m transformer_3t_2l -b 64 -l 0.0001 -i 64 -d 0.6 > data/transformer_3t_2l_b64-l0.0001-h64-d0.6.log
+            touch data/transformer_3t_2l_b64-l0.0001-h64-d0.6.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Traceback (most recent call last):
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 277, in <module>
+    test_loss, test_acc, tumor_confusion = test(model, test_loader, criterion, device)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 248, in test
+    logits = model(data.x, data.edge_index, data.batch)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/CrabGOAT_classes.py", line 272, in forward
+    x, (edge_idx, attn) = conv(x, edge_index, return_attention_weights=True)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/transformer_conv.py", line 229, in forward
+    out = self.propagate(edge_index, query=query, key=key, value=value,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/torch_geometric.nn.conv.transformer_conv_TransformerConv_propagate___15c69e.py", line 186, in propagate
+    kwargs = self.collect(
+             ^^^^^^^^^^^^^
+  File "/tmp/torch_geometric.nn.conv.transformer_conv_TransformerConv_propagate___15c69e.py", line 111, in collect
+    key_j = self._index_select(key, edge_index_j)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/message_passing.py", line 306, in _index_select
+    return self._index_select_safe(src, index)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/message_passing.py", line 329, in _index_select_safe
+    raise e
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/message_passing.py", line 310, in _index_select_safe
+    return src.index_select(self.node_dim, index)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.27 GiB. GPU 0 has a total capacity of 15.56 GiB of which 408.62 MiB is free. Process 31991 has 15.16 GiB memory in use. Of the allocated memory 14.93 GiB is allocated by PyTorch, and 105.54 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[Tue Jul  1 00:15:31 2025]
+Error in rule call_model:
+    jobid: 48
+    output: data/transformer_3t_2l_b64-l0.0001-h64-d0.6.done
+    log: data/transformer_3t_2l_b64-l0.0001-h64-d0.6.log (check log file(s) for error details)
+    shell:
+        
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m transformer_3t_2l -b 64 -l 0.0001 -i 64 -d 0.6 > data/transformer_3t_2l_b64-l0.0001-h64-d0.6.log
+            touch data/transformer_3t_2l_b64-l0.0001-h64-d0.6.done
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Jul  1 00:15:31 2025]
+localrule call_model:
+    output: data/transformer_3t_2l_b32-l0.0001-h64-d0.4.done
+    log: data/transformer_3t_2l_b32-l0.0001-h64-d0.4.log
+    jobid: 34
+    benchmark: bench/transformer_3t_2l_b32-l0.0001-h64-d0.4.time
+    reason: Missing output files: data/transformer_3t_2l_b32-l0.0001-h64-d0.4.done
+    wildcards: model=transformer_3t_2l, batch=32, lr=0.0001, hl=64, dr=0.4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m transformer_3t_2l -b 32 -l 0.0001 -i 64 -d 0.4 > data/transformer_3t_2l_b32-l0.0001-h64-d0.4.log
+            touch data/transformer_3t_2l_b32-l0.0001-h64-d0.4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Tue Jul  1 08:11:38 2025]
+Finished job 34.
+4 of 48 steps (8%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Jul  1 08:11:38 2025]
+localrule call_model:
+    output: data/transformer_3t_2l_b32-l5e-05-h64-d0.6.done
+    log: data/transformer_3t_2l_b32-l5e-05-h64-d0.6.log
+    jobid: 33
+    benchmark: bench/transformer_3t_2l_b32-l5e-05-h64-d0.6.time
+    reason: Missing output files: data/transformer_3t_2l_b32-l5e-05-h64-d0.6.done
+    wildcards: model=transformer_3t_2l, batch=32, lr=5e-05, hl=64, dr=0.6
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m transformer_3t_2l -b 32 -l 5e-05 -i 64 -d 0.6 > data/transformer_3t_2l_b32-l5e-05-h64-d0.6.log
+            touch data/transformer_3t_2l_b32-l5e-05-h64-d0.6.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Tue Jul  1 09:23:33 2025]
+Finished job 33.
+5 of 48 steps (10%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Jul  1 09:23:33 2025]
+localrule call_model:
+    output: data/transformer_2t_2l_b32-l5e-05-h64-d0.6.done
+    log: data/transformer_2t_2l_b32-l5e-05-h64-d0.6.log
+    jobid: 9
+    benchmark: bench/transformer_2t_2l_b32-l5e-05-h64-d0.6.time
+    reason: Missing output files: data/transformer_2t_2l_b32-l5e-05-h64-d0.6.done
+    wildcards: model=transformer_2t_2l, batch=32, lr=5e-05, hl=64, dr=0.6
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m transformer_2t_2l -b 32 -l 5e-05 -i 64 -d 0.6 > data/transformer_2t_2l_b32-l5e-05-h64-d0.6.log
+            touch data/transformer_2t_2l_b32-l5e-05-h64-d0.6.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Tue Jul  1 10:11:39 2025]
+Finished job 9.
+6 of 48 steps (12%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Jul  1 10:11:39 2025]
+localrule call_model:
+    output: data/transformer_2t_2l_b64-l1e-05-h64-d0.6.done
+    log: data/transformer_2t_2l_b64-l1e-05-h64-d0.6.log
+    jobid: 18
+    benchmark: bench/transformer_2t_2l_b64-l1e-05-h64-d0.6.time
+    reason: Missing output files: data/transformer_2t_2l_b64-l1e-05-h64-d0.6.done
+    wildcards: model=transformer_2t_2l, batch=64, lr=1e-05, hl=64, dr=0.6
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m transformer_2t_2l -b 64 -l 1e-05 -i 64 -d 0.6 > data/transformer_2t_2l_b64-l1e-05-h64-d0.6.log
+            touch data/transformer_2t_2l_b64-l1e-05-h64-d0.6.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Tue Jul  1 11:01:37 2025]
+Finished job 18.
+7 of 48 steps (15%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Jul  1 11:01:37 2025]
+localrule call_model:
+    output: data/transformer_2t_2l_b32-l1e-05-h64-d0.5.done
+    log: data/transformer_2t_2l_b32-l1e-05-h64-d0.5.log
+    jobid: 5
+    benchmark: bench/transformer_2t_2l_b32-l1e-05-h64-d0.5.time
+    reason: Missing output files: data/transformer_2t_2l_b32-l1e-05-h64-d0.5.done
+    wildcards: model=transformer_2t_2l, batch=32, lr=1e-05, hl=64, dr=0.5
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m transformer_2t_2l -b 32 -l 1e-05 -i 64 -d 0.5 > data/transformer_2t_2l_b32-l1e-05-h64-d0.5.log
+            touch data/transformer_2t_2l_b32-l1e-05-h64-d0.5.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Tue Jul  1 13:17:53 2025]
+Finished job 5.
+8 of 48 steps (17%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Jul  1 13:17:53 2025]
+localrule call_model:
+    output: data/transformer_2t_2l_b32-l5e-06-h64-d0.4.done
+    log: data/transformer_2t_2l_b32-l5e-06-h64-d0.4.log
+    jobid: 1
+    benchmark: bench/transformer_2t_2l_b32-l5e-06-h64-d0.4.time
+    reason: Missing output files: data/transformer_2t_2l_b32-l5e-06-h64-d0.4.done
+    wildcards: model=transformer_2t_2l, batch=32, lr=5e-06, hl=64, dr=0.4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m transformer_2t_2l -b 32 -l 5e-06 -i 64 -d 0.4 > data/transformer_2t_2l_b32-l5e-06-h64-d0.4.log
+            touch data/transformer_2t_2l_b32-l5e-06-h64-d0.4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Tue Jul  1 16:44:26 2025]
+Finished job 1.
+9 of 48 steps (19%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Jul  1 16:44:26 2025]
+localrule call_model:
+    output: data/transformer_2t_2l_b64-l5e-05-h64-d0.5.done
+    log: data/transformer_2t_2l_b64-l5e-05-h64-d0.5.log
+    jobid: 20
+    benchmark: bench/transformer_2t_2l_b64-l5e-05-h64-d0.5.time
+    reason: Missing output files: data/transformer_2t_2l_b64-l5e-05-h64-d0.5.done
+    wildcards: model=transformer_2t_2l, batch=64, lr=5e-05, hl=64, dr=0.5
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m transformer_2t_2l -b 64 -l 5e-05 -i 64 -d 0.5 > data/transformer_2t_2l_b64-l5e-05-h64-d0.5.log
+            touch data/transformer_2t_2l_b64-l5e-05-h64-d0.5.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Tue Jul  1 17:53:00 2025]
+Finished job 20.
+10 of 48 steps (21%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Jul  1 17:53:00 2025]
+localrule call_model:
+    output: data/transformer_2t_2l_b32-l5e-06-h64-d0.6.done
+    log: data/transformer_2t_2l_b32-l5e-06-h64-d0.6.log
+    jobid: 3
+    benchmark: bench/transformer_2t_2l_b32-l5e-06-h64-d0.6.time
+    reason: Missing output files: data/transformer_2t_2l_b32-l5e-06-h64-d0.6.done
+    wildcards: model=transformer_2t_2l, batch=32, lr=5e-06, hl=64, dr=0.6
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m transformer_2t_2l -b 32 -l 5e-06 -i 64 -d 0.6 > data/transformer_2t_2l_b32-l5e-06-h64-d0.6.log
+            touch data/transformer_2t_2l_b32-l5e-06-h64-d0.6.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Tue Jul  1 18:45:44 2025]
+Finished job 3.
+11 of 48 steps (23%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Jul  1 18:45:44 2025]
+localrule call_model:
+    output: data/transformer_3t_2l_b32-l0.0001-h64-d0.5.done
+    log: data/transformer_3t_2l_b32-l0.0001-h64-d0.5.log
+    jobid: 35
+    benchmark: bench/transformer_3t_2l_b32-l0.0001-h64-d0.5.time
+    reason: Missing output files: data/transformer_3t_2l_b32-l0.0001-h64-d0.5.done
+    wildcards: model=transformer_3t_2l, batch=32, lr=0.0001, hl=64, dr=0.5
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m transformer_3t_2l -b 32 -l 0.0001 -i 64 -d 0.5 > data/transformer_3t_2l_b32-l0.0001-h64-d0.5.log
+            touch data/transformer_3t_2l_b32-l0.0001-h64-d0.5.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Tue Jul  1 20:07:21 2025]
+Finished job 35.
+12 of 48 steps (25%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Jul  1 20:07:21 2025]
+localrule call_model:
+    output: data/transformer_3t_2l_b64-l0.0001-h64-d0.5.done
+    log: data/transformer_3t_2l_b64-l0.0001-h64-d0.5.log
+    jobid: 47
+    benchmark: bench/transformer_3t_2l_b64-l0.0001-h64-d0.5.time
+    reason: Missing output files: data/transformer_3t_2l_b64-l0.0001-h64-d0.5.done
+    wildcards: model=transformer_3t_2l, batch=64, lr=0.0001, hl=64, dr=0.5
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m transformer_3t_2l -b 64 -l 0.0001 -i 64 -d 0.5 > data/transformer_3t_2l_b64-l0.0001-h64-d0.5.log
+            touch data/transformer_3t_2l_b64-l0.0001-h64-d0.5.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Traceback (most recent call last):
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 277, in <module>
+    test_loss, test_acc, tumor_confusion = test(model, test_loader, criterion, device)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/main.py", line 248, in test
+    logits = model(data.x, data.edge_index, data.batch)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/archive/home/egrassi/cuda/saver_6000/CrabGOAT_classes.py", line 272, in forward
+    x, (edge_idx, attn) = conv(x, edge_index, return_attention_weights=True)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/transformer_conv.py", line 229, in forward
+    out = self.propagate(edge_index, query=query, key=key, value=value,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/torch_geometric.nn.conv.transformer_conv_TransformerConv_propagate_3my3cm_1.py", line 186, in propagate
+    kwargs = self.collect(
+             ^^^^^^^^^^^^^
+  File "/tmp/torch_geometric.nn.conv.transformer_conv_TransformerConv_propagate_3my3cm_1.py", line 111, in collect
+    key_j = self._index_select(key, edge_index_j)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/message_passing.py", line 306, in _index_select
+    return self._index_select_safe(src, index)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/message_passing.py", line 329, in _index_select_safe
+    raise e
+  File "/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/nn/conv/message_passing.py", line 310, in _index_select_safe
+    return src.index_select(self.node_dim, index)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.27 GiB. GPU 0 has a total capacity of 15.56 GiB of which 408.62 MiB is free. Process 8003 has 15.16 GiB memory in use. Of the allocated memory 14.93 GiB is allocated by PyTorch, and 105.54 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[Tue Jul  1 21:18:54 2025]
+Error in rule call_model:
+    jobid: 47
+    output: data/transformer_3t_2l_b64-l0.0001-h64-d0.5.done
+    log: data/transformer_3t_2l_b64-l0.0001-h64-d0.5.log (check log file(s) for error details)
+    shell:
+        
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m transformer_3t_2l -b 64 -l 0.0001 -i 64 -d 0.5 > data/transformer_3t_2l_b64-l0.0001-h64-d0.5.log
+            touch data/transformer_3t_2l_b64-l0.0001-h64-d0.5.done
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Jul  1 21:18:54 2025]
+localrule call_model:
+    output: data/transformer_2t_2l_b32-l1e-05-h64-d0.6.done
+    log: data/transformer_2t_2l_b32-l1e-05-h64-d0.6.log
+    jobid: 6
+    benchmark: bench/transformer_2t_2l_b32-l1e-05-h64-d0.6.time
+    reason: Missing output files: data/transformer_2t_2l_b32-l1e-05-h64-d0.6.done
+    wildcards: model=transformer_2t_2l, batch=32, lr=1e-05, hl=64, dr=0.6
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m transformer_2t_2l -b 32 -l 1e-05 -i 64 -d 0.6 > data/transformer_2t_2l_b32-l1e-05-h64-d0.6.log
+            touch data/transformer_2t_2l_b32-l1e-05-h64-d0.6.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Tue Jul  1 22:51:27 2025]
+Finished job 6.
+13 of 48 steps (27%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Jul  1 22:51:27 2025]
+localrule call_model:
+    output: data/transformer_2t_2l_b32-l0.0001-h64-d0.4.done
+    log: data/transformer_2t_2l_b32-l0.0001-h64-d0.4.log
+    jobid: 10
+    benchmark: bench/transformer_2t_2l_b32-l0.0001-h64-d0.4.time
+    reason: Missing output files: data/transformer_2t_2l_b32-l0.0001-h64-d0.4.done
+    wildcards: model=transformer_2t_2l, batch=32, lr=0.0001, hl=64, dr=0.4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m transformer_2t_2l -b 32 -l 0.0001 -i 64 -d 0.4 > data/transformer_2t_2l_b32-l0.0001-h64-d0.4.log
+            touch data/transformer_2t_2l_b32-l0.0001-h64-d0.4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Tue Jul  1 23:59:02 2025]
+Finished job 10.
+14 of 48 steps (29%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Jul  1 23:59:02 2025]
+localrule call_model:
+    output: data/transformer_3t_2l_b32-l5e-06-h64-d0.4.done
+    log: data/transformer_3t_2l_b32-l5e-06-h64-d0.4.log
+    jobid: 25
+    benchmark: bench/transformer_3t_2l_b32-l5e-06-h64-d0.4.time
+    reason: Missing output files: data/transformer_3t_2l_b32-l5e-06-h64-d0.4.done
+    wildcards: model=transformer_3t_2l, batch=32, lr=5e-06, hl=64, dr=0.4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m transformer_3t_2l -b 32 -l 5e-06 -i 64 -d 0.4 > data/transformer_3t_2l_b32-l5e-06-h64-d0.4.log
+            touch data/transformer_3t_2l_b32-l5e-06-h64-d0.4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)

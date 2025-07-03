@@ -1,0 +1,681 @@
+Assuming unrestricted shared filesystem usage.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+all_graphsage_128        1
+call_sage               90
+total                   91
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 11:19:29 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l0.01-h64-d0.4-n2.done
+    log: data/GraphSage_128_b128-l0.01-h64-d0.4-n2.log
+    jobid: 7
+    benchmark: bench/GraphSage_128_b128-l0.01-h64-d0.4-n2.time
+    reason: Missing output files: data/GraphSage_128_b128-l0.01-h64-d0.4-n2.done
+    wildcards: model=GraphSage_128, batch=128, lr=0.01, hl=64, dr=0.4, nl=2
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 0.01 -i 64 -d 0.4 -n 2 > data/GraphSage_128_b128-l0.01-h64-d0.4-n2.log
+            touch data/GraphSage_128_b128-l0.01-h64-d0.4-n2.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 11:56:08 2025]
+Finished job 7.
+1 of 91 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 11:56:08 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l0.005-h64-d0.5-n2.done
+    log: data/GraphSage_128_b128-l0.005-h64-d0.5-n2.log
+    jobid: 22
+    benchmark: bench/GraphSage_128_b128-l0.005-h64-d0.5-n2.time
+    reason: Missing output files: data/GraphSage_128_b128-l0.005-h64-d0.5-n2.done
+    wildcards: model=GraphSage_128, batch=128, lr=0.005, hl=64, dr=0.5, nl=2
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 0.005 -i 64 -d 0.5 -n 2 > data/GraphSage_128_b128-l0.005-h64-d0.5-n2.log
+            touch data/GraphSage_128_b128-l0.005-h64-d0.5-n2.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 12:06:18 2025]
+Finished job 22.
+2 of 91 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 12:06:18 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l0.001-h64-d0.5-n4.done
+    log: data/GraphSage_128_b128-l0.001-h64-d0.5-n4.log
+    jobid: 42
+    benchmark: bench/GraphSage_128_b128-l0.001-h64-d0.5-n4.time
+    reason: Missing output files: data/GraphSage_128_b128-l0.001-h64-d0.5-n4.done
+    wildcards: model=GraphSage_128, batch=128, lr=0.001, hl=64, dr=0.5, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 0.001 -i 64 -d 0.5 -n 4 > data/GraphSage_128_b128-l0.001-h64-d0.5-n4.log
+            touch data/GraphSage_128_b128-l0.001-h64-d0.5-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 12:39:55 2025]
+Finished job 42.
+3 of 91 steps (3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 12:39:55 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l0.01-h128-d0.6-n4.done
+    log: data/GraphSage_128_b128-l0.01-h128-d0.6-n4.log
+    jobid: 12
+    benchmark: bench/GraphSage_128_b128-l0.01-h128-d0.6-n4.time
+    reason: Missing output files: data/GraphSage_128_b128-l0.01-h128-d0.6-n4.done
+    wildcards: model=GraphSage_128, batch=128, lr=0.01, hl=128, dr=0.6, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 0.01 -i 128 -d 0.6 -n 4 > data/GraphSage_128_b128-l0.01-h128-d0.6-n4.log
+            touch data/GraphSage_128_b128-l0.01-h128-d0.6-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 15:22:52 2025]
+Finished job 12.
+4 of 91 steps (4%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 15:22:52 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l0.0005-h64-d0.6-n4.done
+    log: data/GraphSage_128_b128-l0.0005-h64-d0.6-n4.log
+    jobid: 57
+    benchmark: bench/GraphSage_128_b128-l0.0005-h64-d0.6-n4.time
+    reason: Missing output files: data/GraphSage_128_b128-l0.0005-h64-d0.6-n4.done
+    wildcards: model=GraphSage_128, batch=128, lr=0.0005, hl=64, dr=0.6, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 0.0005 -i 64 -d 0.6 -n 4 > data/GraphSage_128_b128-l0.0005-h64-d0.6-n4.log
+            touch data/GraphSage_128_b128-l0.0005-h64-d0.6-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 15:53:18 2025]
+Finished job 57.
+5 of 91 steps (5%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 15:53:18 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l0.01-h128-d0.5-n3.done
+    log: data/GraphSage_128_b128-l0.01-h128-d0.5-n3.log
+    jobid: 14
+    benchmark: bench/GraphSage_128_b128-l0.01-h128-d0.5-n3.time
+    reason: Missing output files: data/GraphSage_128_b128-l0.01-h128-d0.5-n3.done
+    wildcards: model=GraphSage_128, batch=128, lr=0.01, hl=128, dr=0.5, nl=3
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 0.01 -i 128 -d 0.5 -n 3 > data/GraphSage_128_b128-l0.01-h128-d0.5-n3.log
+            touch data/GraphSage_128_b128-l0.01-h128-d0.5-n3.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 17:00:55 2025]
+Finished job 14.
+6 of 91 steps (7%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 17:00:55 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l1e-05-h128-d0.6-n2.done
+    log: data/GraphSage_128_b128-l1e-05-h128-d0.6-n2.log
+    jobid: 82
+    benchmark: bench/GraphSage_128_b128-l1e-05-h128-d0.6-n2.time
+    reason: Missing output files: data/GraphSage_128_b128-l1e-05-h128-d0.6-n2.done
+    wildcards: model=GraphSage_128, batch=128, lr=1e-05, hl=128, dr=0.6, nl=2
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 1e-05 -i 128 -d 0.6 -n 2 > data/GraphSage_128_b128-l1e-05-h128-d0.6-n2.log
+            touch data/GraphSage_128_b128-l1e-05-h128-d0.6-n2.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 17:15:46 2025]
+Finished job 82.
+7 of 91 steps (8%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 17:15:46 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l0.01-h64-d0.4-n4.done
+    log: data/GraphSage_128_b128-l0.01-h64-d0.4-n4.log
+    jobid: 9
+    benchmark: bench/GraphSage_128_b128-l0.01-h64-d0.4-n4.time
+    reason: Missing output files: data/GraphSage_128_b128-l0.01-h64-d0.4-n4.done
+    wildcards: model=GraphSage_128, batch=128, lr=0.01, hl=64, dr=0.4, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 0.01 -i 64 -d 0.4 -n 4 > data/GraphSage_128_b128-l0.01-h64-d0.4-n4.log
+            touch data/GraphSage_128_b128-l0.01-h64-d0.4-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 18:37:02 2025]
+Finished job 9.
+8 of 91 steps (9%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 18:37:02 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l0.005-h64-d0.5-n4.done
+    log: data/GraphSage_128_b128-l0.005-h64-d0.5-n4.log
+    jobid: 24
+    benchmark: bench/GraphSage_128_b128-l0.005-h64-d0.5-n4.time
+    reason: Missing output files: data/GraphSage_128_b128-l0.005-h64-d0.5-n4.done
+    wildcards: model=GraphSage_128, batch=128, lr=0.005, hl=64, dr=0.5, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 0.005 -i 64 -d 0.5 -n 4 > data/GraphSage_128_b128-l0.005-h64-d0.5-n4.log
+            touch data/GraphSage_128_b128-l0.005-h64-d0.5-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 19:08:38 2025]
+Finished job 24.
+9 of 91 steps (10%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 19:08:38 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l0.001-h64-d0.6-n4.done
+    log: data/GraphSage_128_b128-l0.001-h64-d0.6-n4.log
+    jobid: 39
+    benchmark: bench/GraphSage_128_b128-l0.001-h64-d0.6-n4.time
+    reason: Missing output files: data/GraphSage_128_b128-l0.001-h64-d0.6-n4.done
+    wildcards: model=GraphSage_128, batch=128, lr=0.001, hl=64, dr=0.6, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 0.001 -i 64 -d 0.6 -n 4 > data/GraphSage_128_b128-l0.001-h64-d0.6-n4.log
+            touch data/GraphSage_128_b128-l0.001-h64-d0.6-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 19:30:05 2025]
+Finished job 39.
+10 of 91 steps (11%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 19:30:05 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l0.0005-h128-d0.5-n2.done
+    log: data/GraphSage_128_b128-l0.0005-h128-d0.5-n2.log
+    jobid: 67
+    benchmark: bench/GraphSage_128_b128-l0.0005-h128-d0.5-n2.time
+    reason: Missing output files: data/GraphSage_128_b128-l0.0005-h128-d0.5-n2.done
+    wildcards: model=GraphSage_128, batch=128, lr=0.0005, hl=128, dr=0.5, nl=2
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 0.0005 -i 128 -d 0.5 -n 2 > data/GraphSage_128_b128-l0.0005-h128-d0.5-n2.log
+            touch data/GraphSage_128_b128-l0.0005-h128-d0.5-n2.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 19:47:31 2025]
+Finished job 67.
+11 of 91 steps (12%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 19:47:31 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l0.001-h128-d0.4-n4.done
+    log: data/GraphSage_128_b128-l0.001-h128-d0.4-n4.log
+    jobid: 54
+    benchmark: bench/GraphSage_128_b128-l0.001-h128-d0.4-n4.time
+    reason: Missing output files: data/GraphSage_128_b128-l0.001-h128-d0.4-n4.done
+    wildcards: model=GraphSage_128, batch=128, lr=0.001, hl=128, dr=0.4, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 0.001 -i 128 -d 0.4 -n 4 > data/GraphSage_128_b128-l0.001-h128-d0.4-n4.log
+            touch data/GraphSage_128_b128-l0.001-h128-d0.4-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 20:18:39 2025]
+Finished job 54.
+12 of 91 steps (13%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 20:18:39 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l0.0005-h128-d0.5-n4.done
+    log: data/GraphSage_128_b128-l0.0005-h128-d0.5-n4.log
+    jobid: 69
+    benchmark: bench/GraphSage_128_b128-l0.0005-h128-d0.5-n4.time
+    reason: Missing output files: data/GraphSage_128_b128-l0.0005-h128-d0.5-n4.done
+    wildcards: model=GraphSage_128, batch=128, lr=0.0005, hl=128, dr=0.5, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 0.0005 -i 128 -d 0.5 -n 4 > data/GraphSage_128_b128-l0.0005-h128-d0.5-n4.log
+            touch data/GraphSage_128_b128-l0.0005-h128-d0.5-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 20:53:28 2025]
+Finished job 69.
+13 of 91 steps (14%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 20:53:28 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l1e-05-h128-d0.6-n4.done
+    log: data/GraphSage_128_b128-l1e-05-h128-d0.6-n4.log
+    jobid: 84
+    benchmark: bench/GraphSage_128_b128-l1e-05-h128-d0.6-n4.time
+    reason: Missing output files: data/GraphSage_128_b128-l1e-05-h128-d0.6-n4.done
+    wildcards: model=GraphSage_128, batch=128, lr=1e-05, hl=128, dr=0.6, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 1e-05 -i 128 -d 0.6 -n 4 > data/GraphSage_128_b128-l1e-05-h128-d0.6-n4.log
+            touch data/GraphSage_128_b128-l1e-05-h128-d0.6-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 21:19:35 2025]
+Finished job 84.
+14 of 91 steps (15%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 21:19:35 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l0.01-h64-d0.5-n4.done
+    log: data/GraphSage_128_b128-l0.01-h64-d0.5-n4.log
+    jobid: 6
+    benchmark: bench/GraphSage_128_b128-l0.01-h64-d0.5-n4.time
+    reason: Missing output files: data/GraphSage_128_b128-l0.01-h64-d0.5-n4.done
+    wildcards: model=GraphSage_128, batch=128, lr=0.01, hl=64, dr=0.5, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 0.01 -i 64 -d 0.5 -n 4 > data/GraphSage_128_b128-l0.01-h64-d0.5-n4.log
+            touch data/GraphSage_128_b128-l0.01-h64-d0.5-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Wed Jul  2 23:43:19 2025]
+Finished job 6.
+15 of 91 steps (16%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Jul  2 23:43:19 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l0.005-h64-d0.6-n4.done
+    log: data/GraphSage_128_b128-l0.005-h64-d0.6-n4.log
+    jobid: 21
+    benchmark: bench/GraphSage_128_b128-l0.005-h64-d0.6-n4.time
+    reason: Missing output files: data/GraphSage_128_b128-l0.005-h64-d0.6-n4.done
+    wildcards: model=GraphSage_128, batch=128, lr=0.005, hl=64, dr=0.6, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 0.005 -i 64 -d 0.6 -n 4 > data/GraphSage_128_b128-l0.005-h64-d0.6-n4.log
+            touch data/GraphSage_128_b128-l0.005-h64-d0.6-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Thu Jul  3 00:13:40 2025]
+Finished job 21.
+16 of 91 steps (18%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 00:13:40 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l0.005-h128-d0.4-n4.done
+    log: data/GraphSage_128_b128-l0.005-h128-d0.4-n4.log
+    jobid: 36
+    benchmark: bench/GraphSage_128_b128-l0.005-h128-d0.4-n4.time
+    reason: Missing output files: data/GraphSage_128_b128-l0.005-h128-d0.4-n4.done
+    wildcards: model=GraphSage_128, batch=128, lr=0.005, hl=128, dr=0.4, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 0.005 -i 128 -d 0.4 -n 4 > data/GraphSage_128_b128-l0.005-h128-d0.4-n4.log
+            touch data/GraphSage_128_b128-l0.005-h128-d0.4-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Thu Jul  3 02:21:16 2025]
+Finished job 36.
+17 of 91 steps (19%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 02:21:16 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l0.001-h128-d0.5-n4.done
+    log: data/GraphSage_128_b128-l0.001-h128-d0.5-n4.log
+    jobid: 51
+    benchmark: bench/GraphSage_128_b128-l0.001-h128-d0.5-n4.time
+    reason: Missing output files: data/GraphSage_128_b128-l0.001-h128-d0.5-n4.done
+    wildcards: model=GraphSage_128, batch=128, lr=0.001, hl=128, dr=0.5, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 0.001 -i 128 -d 0.5 -n 4 > data/GraphSage_128_b128-l0.001-h128-d0.5-n4.log
+            touch data/GraphSage_128_b128-l0.001-h128-d0.5-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Thu Jul  3 02:51:54 2025]
+Finished job 51.
+18 of 91 steps (20%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 02:51:54 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l1e-05-h128-d0.4-n2.done
+    log: data/GraphSage_128_b128-l1e-05-h128-d0.4-n2.log
+    jobid: 88
+    benchmark: bench/GraphSage_128_b128-l1e-05-h128-d0.4-n2.time
+    reason: Missing output files: data/GraphSage_128_b128-l1e-05-h128-d0.4-n2.done
+    wildcards: model=GraphSage_128, batch=128, lr=1e-05, hl=128, dr=0.4, nl=2
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 1e-05 -i 128 -d 0.4 -n 2 > data/GraphSage_128_b128-l1e-05-h128-d0.4-n2.log
+            touch data/GraphSage_128_b128-l1e-05-h128-d0.4-n2.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Thu Jul  3 03:07:17 2025]
+Finished job 88.
+19 of 91 steps (21%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 03:07:17 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l0.0005-h128-d0.6-n4.done
+    log: data/GraphSage_128_b128-l0.0005-h128-d0.6-n4.log
+    jobid: 66
+    benchmark: bench/GraphSage_128_b128-l0.0005-h128-d0.6-n4.time
+    reason: Missing output files: data/GraphSage_128_b128-l0.0005-h128-d0.6-n4.done
+    wildcards: model=GraphSage_128, batch=128, lr=0.0005, hl=128, dr=0.6, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 0.0005 -i 128 -d 0.6 -n 4 > data/GraphSage_128_b128-l0.0005-h128-d0.6-n4.log
+            touch data/GraphSage_128_b128-l0.0005-h128-d0.6-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Thu Jul  3 03:53:24 2025]
+Finished job 66.
+20 of 91 steps (22%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 03:53:24 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l1e-05-h64-d0.4-n4.done
+    log: data/GraphSage_128_b128-l1e-05-h64-d0.4-n4.log
+    jobid: 81
+    benchmark: bench/GraphSage_128_b128-l1e-05-h64-d0.4-n4.time
+    reason: Missing output files: data/GraphSage_128_b128-l1e-05-h64-d0.4-n4.done
+    wildcards: model=GraphSage_128, batch=128, lr=1e-05, hl=64, dr=0.4, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 1e-05 -i 64 -d 0.4 -n 4 > data/GraphSage_128_b128-l1e-05-h64-d0.4-n4.log
+            touch data/GraphSage_128_b128-l1e-05-h64-d0.4-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Thu Jul  3 04:09:06 2025]
+Finished job 81.
+21 of 91 steps (23%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 04:09:06 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l0.0005-h64-d0.4-n4.done
+    log: data/GraphSage_128_b128-l0.0005-h64-d0.4-n4.log
+    jobid: 63
+    benchmark: bench/GraphSage_128_b128-l0.0005-h64-d0.4-n4.time
+    reason: Missing output files: data/GraphSage_128_b128-l0.0005-h64-d0.4-n4.done
+    wildcards: model=GraphSage_128, batch=128, lr=0.0005, hl=64, dr=0.4, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 0.0005 -i 64 -d 0.4 -n 4 > data/GraphSage_128_b128-l0.0005-h64-d0.4-n4.log
+            touch data/GraphSage_128_b128-l0.0005-h64-d0.4-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Thu Jul  3 04:42:43 2025]
+Finished job 63.
+22 of 91 steps (24%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 04:42:43 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l1e-05-h64-d0.6-n2.done
+    log: data/GraphSage_128_b128-l1e-05-h64-d0.6-n2.log
+    jobid: 73
+    benchmark: bench/GraphSage_128_b128-l1e-05-h64-d0.6-n2.time
+    reason: Missing output files: data/GraphSage_128_b128-l1e-05-h64-d0.6-n2.done
+    wildcards: model=GraphSage_128, batch=128, lr=1e-05, hl=64, dr=0.6, nl=2
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 1e-05 -i 64 -d 0.6 -n 2 > data/GraphSage_128_b128-l1e-05-h64-d0.6-n2.log
+            touch data/GraphSage_128_b128-l1e-05-h64-d0.6-n2.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Thu Jul  3 04:52:20 2025]
+Finished job 73.
+23 of 91 steps (25%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 04:52:20 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l1e-05-h128-d0.4-n3.done
+    log: data/GraphSage_128_b128-l1e-05-h128-d0.4-n3.log
+    jobid: 89
+    benchmark: bench/GraphSage_128_b128-l1e-05-h128-d0.4-n3.time
+    reason: Missing output files: data/GraphSage_128_b128-l1e-05-h128-d0.4-n3.done
+    wildcards: model=GraphSage_128, batch=128, lr=1e-05, hl=128, dr=0.4, nl=3
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 1e-05 -i 128 -d 0.4 -n 3 > data/GraphSage_128_b128-l1e-05-h128-d0.4-n3.log
+            touch data/GraphSage_128_b128-l1e-05-h128-d0.4-n3.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Thu Jul  3 05:13:47 2025]
+Finished job 89.
+24 of 91 steps (26%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 05:13:47 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l0.01-h64-d0.4-n3.done
+    log: data/GraphSage_128_b128-l0.01-h64-d0.4-n3.log
+    jobid: 8
+    benchmark: bench/GraphSage_128_b128-l0.01-h64-d0.4-n3.time
+    reason: Missing output files: data/GraphSage_128_b128-l0.01-h64-d0.4-n3.done
+    wildcards: model=GraphSage_128, batch=128, lr=0.01, hl=64, dr=0.4, nl=3
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 0.01 -i 64 -d 0.4 -n 3 > data/GraphSage_128_b128-l0.01-h64-d0.4-n3.log
+            touch data/GraphSage_128_b128-l0.01-h64-d0.4-n3.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Thu Jul  3 06:12:32 2025]
+Finished job 8.
+25 of 91 steps (27%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 06:12:32 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l0.005-h64-d0.5-n3.done
+    log: data/GraphSage_128_b128-l0.005-h64-d0.5-n3.log
+    jobid: 23
+    benchmark: bench/GraphSage_128_b128-l0.005-h64-d0.5-n3.time
+    reason: Missing output files: data/GraphSage_128_b128-l0.005-h64-d0.5-n3.done
+    wildcards: model=GraphSage_128, batch=128, lr=0.005, hl=64, dr=0.5, nl=3
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 0.005 -i 64 -d 0.5 -n 3 > data/GraphSage_128_b128-l0.005-h64-d0.5-n3.log
+            touch data/GraphSage_128_b128-l0.005-h64-d0.5-n3.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Thu Jul  3 06:26:37 2025]
+Finished job 23.
+26 of 91 steps (29%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 06:26:37 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l0.01-h64-d0.6-n4.done
+    log: data/GraphSage_128_b128-l0.01-h64-d0.6-n4.log
+    jobid: 3
+    benchmark: bench/GraphSage_128_b128-l0.01-h64-d0.6-n4.time
+    reason: Missing output files: data/GraphSage_128_b128-l0.01-h64-d0.6-n4.done
+    wildcards: model=GraphSage_128, batch=128, lr=0.01, hl=64, dr=0.6, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 0.01 -i 64 -d 0.6 -n 4 > data/GraphSage_128_b128-l0.01-h64-d0.6-n4.log
+            touch data/GraphSage_128_b128-l0.01-h64-d0.6-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+[Thu Jul  3 07:29:35 2025]
+Finished job 3.
+27 of 91 steps (30%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Jul  3 07:29:35 2025]
+localrule call_sage:
+    output: data/GraphSage_128_b128-l0.01-h128-d0.4-n4.done
+    log: data/GraphSage_128_b128-l0.01-h128-d0.4-n4.log
+    jobid: 18
+    benchmark: bench/GraphSage_128_b128-l0.01-h128-d0.4-n4.time
+    reason: Missing output files: data/GraphSage_128_b128-l0.01-h128-d0.4-n4.done
+    wildcards: model=GraphSage_128, batch=128, lr=0.01, hl=128, dr=0.4, nl=4
+    resources: tmpdir=/tmp
+
+
+            python main.py -r data -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_128 -b 128 -l 0.01 -i 128 -d 0.4 -n 4 > data/GraphSage_128_b128-l0.01-h128-d0.4-n4.log
+            touch data/GraphSage_128_b128-l0.01-h128-d0.4-n4.done
+        
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch_geometric/warnings.py:11: UserWarning: The usage of `scatter(reduce='max')` can be accelerated via the 'torch-scatter' package, but it was not found
+  warnings.warn(message)
+/opt/conda/envs/mamba_cuda_env/lib/python3.12/site-packages/torch/optim/lr_scheduler.py:156: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
