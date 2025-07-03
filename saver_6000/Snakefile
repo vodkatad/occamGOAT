@@ -66,3 +66,26 @@ rule call_sage_inv:
             python main.py -r data -s samplesheet_sedie.csv -p filtered_annotated -e data/general_edge_list.csv -m {wildcards.model} -b {wildcards.batch} -l {wildcards.lr} -i {wildcards.hl} -d {wildcards.dr} -n {wildcards.nl} > {log.log}
             touch {output}
         """
+
+## TopK
+parameters_sagek = {
+    'learning_rates': [0.01,0.005,0.001,0.0005,0.00001],
+    'hidden_layers': [64, 128],
+    'dropout': [0.6,0.5,0.4],
+    'num_layers': [2,3,4],  # we have the two 
+    'topk': [0.6, 0.7, 0.8, 0.9]
+}
+
+rule allk:
+    input: expand("testk/GraphSage_topk-b{batch}-l{lr}-h{hl}-d{dr}-n{nl}-k{topk}.done", batch=128, lr=parameters_sagek['learning_rates'], hl=parameters_sagek['hidden_layers'], dr=parameters_sagek['dropout'], nl=parameters_sagek['num_layers'], topk=parameters_sagek['topk'])
+
+rule call_sage_topk:
+    output: "testk/GraphSage_topk-b{batch}-l{lr}-h{hl}-d{dr}-n{nl}-k{topk}.done"
+    log: log="testk/GraphSage_topk-b{batch}-l{lr}-h{hl}-d{dr}-n{nl}-k{topk}.log"
+    benchmark: "bench_topk/GraphSage_topk-b{batch}-l{lr}-h{hl}-d{dr}-n{nl}-k{topk}.time"
+    shell: 
+        """
+            python main_topk.py -r testk -s samplesheet.csv -p filtered_annotated -e data/general_edge_list.csv -m GraphSage_topk -b {wildcards.batch} -l {wildcards.lr} -i {wildcards.hl} -d {wildcards.dr} -n {wildcards.nl} -k {wildcards.topk} > {log.log}
+            touch {output}
+        """
+
